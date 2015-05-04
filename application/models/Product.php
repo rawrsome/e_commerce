@@ -25,14 +25,7 @@ class Product extends CI_Model {
 
 	public function get_search($name)
 	{
-		// $match = $this->input->post('search');
-		// $this->db->like('name', $match);
-		// $this->db->or_like('description', $match);
-		// $this->db->or_like('price', $match);
-
-		// $query = $this->db->get('products');
-		// return $query->result();
-
+	
 
 
 		$query = "SELECT * FROM prodcuts WHERE name = ?";
