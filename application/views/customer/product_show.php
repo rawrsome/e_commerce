@@ -59,7 +59,7 @@
 			<h4>Shopping Cart (5)</h4>
 		</div>
 
-		<p><a href="">Go Back</a></p>
+		<p><a href="/products_page/index">Go Back</a></p>
 
 		<div class="left_nav">
 			<h4><?= $name; ?></h4>
@@ -84,9 +84,9 @@
 			</div>
 			<form action="" method="POST" class="pull-right">
 				<select>
-					<option>1 (299.99)</option>
-					<option>2 (599.98)</option>
-					<option>3 (899.97)</option>
+					<option>Qty 1: $<?= $price; ?></option>
+					<option>Qty 2: $<?= $price * 2; ?></option>
+					<option>Qty 3: $<?= $price * 3; ?></option>
 					<input type="submit" value="buy" class="btn btn-primary btn-xs">
 				</select>
 			</form>

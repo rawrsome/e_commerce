@@ -23,6 +23,7 @@ class Product extends CI_Model {
 		return $this->db->query($query, array($id))->row_array();
 	}
 
+<<<<<<< HEAD
 	public function get_orders()
 	{
 		$query="SELECT orders.id AS order_id,products.name,SUM(products.price),billings.first_name,orders.created_at,billings.address,billings.city,billings.state,billings.zipcode,orders.status FROM orders
@@ -60,6 +61,23 @@ class Product extends CI_Model {
 	}
 
 
+=======
+	public function get_search()
+	{
+		// $match = $this->input->post('search');
+		// $this->db->like('name', $match);
+		// $this->db->or_like('description', $match);
+		// $this->db->or_like('price', $match);
+
+		// $query = $this->db->get('products');
+		// return $query->result();
+
+		$query = "SELECT * FROM prodcuts WHERE name = ?";
+
+		return $this->db->query($query)->result_array();
+
+	}
+>>>>>>> 7a2f03839ba17e7855eaa9dc080884d7ff2b8523
 
 }
 //  end of Model

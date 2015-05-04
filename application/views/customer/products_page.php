@@ -56,16 +56,17 @@
 			<h4>Shopping Cart (5)</h4>
 		</div>
 		<div class="left_nav">
-			<form action="" method="POST">
+			<form action="/product_page/search" method="POST">
 				<input type="text" name="search_bar" placeholder="product name...">
 				<button><type="submit" name="search"><img src="http://png-2.findicons.com/files/icons/1156/fugue/16/magnifier_medium_left.png"></button>
 				<p>Categories</p>
+
+			</form>
 <?php foreach ($categories as $categories) { ?>
 
 				<p><a href='product_show/show_products/'><?= $categories['name'] ?></a></p>
 
-<?php }?>
-			</form>
+<?php }?>			
 		</div>
 		<div class="center_nav">
 			<div class="center_title">
@@ -83,7 +84,8 @@
 <?php foreach ($products as $product) { ?>						
 					<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"><br>
 					<!-- $product['id'] carries products.id to display in the product_show page -->
-					<a href='product_show/show_products/<?= $product['id']; ?>''><?= $product['name'] ?></a>
+					<a href='/product_show/show_products/<?= $product['id']; ?>'>
+						<?= $product['name'] ?></a>
 					<p><?= $product['price'] ?></p>
 
 <?php	} ?>						
