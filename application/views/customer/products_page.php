@@ -5,9 +5,22 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
+		body
+		{
+			width: 100%;
+			height: 100%;
+			background: #FFE4B5;
+		}
+
+		.container
+		{
+			width: 800px;
+			margin: 0px auto;
+		}
 		.header 
 		{
-			background: silver;
+			background: url(/assets/beans.png);
+			color: white;
 		}
 
 		.left_nav 
@@ -15,6 +28,7 @@
 			border: 1px solid black;
 			width: 200px;
 			display: inline-block;
+			position: static;
 		}
 
 		.center_nav
@@ -22,6 +36,7 @@
 			border: 1px solid black;
 			display: inline-block;
 			vertical-align: top;
+			position: static;
 		}
 
 		.product_img
@@ -41,7 +56,7 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>Dojo eCommerce</h2>
+			<h1>BayArea Roasters</h2>
 			<h4>Shopping Cart (5)</h4>
 		</div>
 		<div class="left_nav">
