@@ -56,7 +56,7 @@
 			<h4>Shopping Cart (5)</h4>
 		</div>
 		<div class="left_nav">
-			<form action="/product_page/search" method="POST">
+			<form action="/products_page/search" method="POST">
 				<input type="text" name="search_bar" placeholder="product name...">
 				<button><type="submit" name="search"><img src="http://png-2.findicons.com/files/icons/1156/fugue/16/magnifier_medium_left.png"></button>
 				<p>Categories</p>

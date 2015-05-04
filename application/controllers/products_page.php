@@ -26,9 +26,14 @@ class Products_page extends CI_Controller {
 		// $data['query'] = $this->Product->get_search();
 		// $this->load->view('products', );
 
-		$search = $this->Product->get_search();
+		//get post thing called 'search_bar' from products_page form
+		$search=$this->input->post('search_bar');
+
+		//pass search model and store array result in result
+		$result = $this->Product->get_search($search);
 
 		var_dump($search);
+		var_dump($result);
 		die();
 
 
