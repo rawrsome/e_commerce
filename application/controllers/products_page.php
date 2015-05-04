@@ -32,13 +32,11 @@ class Products_page extends CI_Controller {
 		//pass search model and store array result in result
 		$result = $this->Product->get_search($search);
 
-<<<<<<< HEAD
-=======
 		var_dump($search);
 		var_dump($result);
 		die();
 
->>>>>>> 495757964f1520562ff2d6929e43aa0f73140d96
+
 
 		$this->load->view('customer/product_show', array('name'=>$search['name'], 'description'=>$search['description']));
 	}
