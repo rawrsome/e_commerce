@@ -15,6 +15,9 @@ class Products_page extends CI_Controller {
 		$products = $this->Product->get_all_products();
 		$categories = $this->Product->get_categories();
 
+		// var_dump($products);
+		// die();
+
 		$this->load->view('customer/products_page', array('products'=>$products, 'categories'=>$categories));
 	}
 }

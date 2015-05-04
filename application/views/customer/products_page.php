@@ -62,7 +62,7 @@
 				<p>Categories</p>
 <?php foreach ($categories as $categories) { ?>
 
-				<p><a href='product_show/show_products/<?= $product['id']; ?>'><?= $categories['name'] ?></a></p>
+				<p><a href='product_show/show_products/'><?= $categories['name'] ?></a></p>
 
 <?php }?>
 			</form>
@@ -82,7 +82,8 @@
 				<div class="img">			
 <?php foreach ($products as $product) { ?>						
 					<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"><br>
-					<a href=""><?= $product['name'] ?></a>
+					<!-- $product['id'] carries products.id to display in the product_show page -->
+					<a href='product_show/show_products/<?= $product['id']; ?>''><?= $product['name'] ?></a>
 					<p><?= $product['price'] ?></p>
 
 <?php	} ?>						

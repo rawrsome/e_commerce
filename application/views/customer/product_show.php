@@ -62,7 +62,7 @@
 		<p><a href="">Go Back</a></p>
 
 		<div class="left_nav">
-			<h4>LUDLOW SUIT JACKET IN FINE-STRIPED COTTON</h4>
+			<h4><?= $name; ?></h4>
 			<p class="left_nav_main_img"></p>
 			<table>
 				<tbody>
@@ -78,16 +78,8 @@
 		</div>
 		<div class="center_nav">
 			<div class="center_nav_description">
-				<p>Timeless, versatile and seriously stylish, the Ludlow will quickly become the foundation of your suiting wardrobe. This version of the Ludlow jacket is woven in fine-striped cotton and is partially constructed—in other words, it's made with a specially developed interior that offers some structure but, because of the soft shoulder, maintains a laid-back look. This also means it's lighter and ideal for warm weather.<br>
-				-Tailored, modern cut with a trim silhouette.<br>
-				-Narrow lapel.<br>
-				-Cotton.<br>
-				-Two-button closure.<br>
-				-Nonfunctional buttons at cuffs.<br>
-				-Pickstitching along collar, lapel and pockets.<br>
-				-Double vent.<br>
-				-Dry clean.<br>
-				-Import<br>
+				<p>
+					<?= $description; ?>
 				</p>
 			</div>
 			<form action="" method="POST" class="pull-right">
