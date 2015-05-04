@@ -21,18 +21,16 @@ class Products_page extends CI_Controller {
 		$this->load->view('customer/products_page', array('products'=>$products, 'categories'=>$categories));
 	}
 
-		public function search()
+	public function search()
 	{
 		// $data['query'] = $this->Product->get_search();
 		// $this->load->view('products', );
 
 		$search = $this->Product->get_search();
 
-		var_dump($search);
-		die();
-
 
 		$this->load->view('customer/product_show', array('name'=>$search['name'], 'description'=>$search['description']));
 	}
+
 }
 //end of Products_page controller

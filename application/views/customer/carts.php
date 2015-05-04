@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="header">
 			<h1>Dojo eCommerce</h2>
-			<h4>Shopping Cart (5)</h4>
+			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
 		</div>
 		<div class="cart_table">
 			<table class="table table-striped table-bordered table-hover">
@@ -48,7 +48,7 @@
 		<div class="col-xs-10"></div>			
 			<div class="col-xs-2">
 				<p>Total: $699.97</p>
-				<button type="button" class="btn btn-success btn-xs">Continue Shopping</button>
+				<a class="btn btn-success btn-xs" href="/products_page/index/">Continue Shopping</a>
 			</div>
 		</div>
 	

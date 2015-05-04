@@ -23,7 +23,7 @@ class Product extends CI_Model {
 		return $this->db->query($query, array($id))->row_array();
 	}
 
-	public function get_search()
+	public function get_search($name)
 	{
 		// $match = $this->input->post('search');
 		// $this->db->like('name', $match);
@@ -33,10 +33,19 @@ class Product extends CI_Model {
 		// $query = $this->db->get('products');
 		// return $query->result();
 
+
+
 		$query = "SELECT * FROM prodcuts WHERE name = ?";
 
 		return $this->db->query($query)->result_array();
 
+	}
+
+	public function get_cart()
+	{
+		$query = "SELECT * FROM products WHERE id = ?";
+
+		return $this->db->query($query)->result_array();
 	}
 
 }
