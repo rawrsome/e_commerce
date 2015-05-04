@@ -60,11 +60,11 @@
 				<input type="text" name="search_bar" placeholder="product name...">
 				<button><type="submit" name="search"><img src="http://png-2.findicons.com/files/icons/1156/fugue/16/magnifier_medium_left.png"></button>
 				<p>Categories</p>
-				<p><a href="">Ludlow</a></p>
-				<p><a href="">Crosby</a></p>
-				<p><a href="">Tuxedos</a></p>
-				<p><a href="">Travler</a></p>
-				<p><a href="">All Suits</a></p>
+<?php foreach ($categories as $categories) { ?>
+
+				<p><a href='product_show/show_products/<?= $product['id']; ?>'><?= $categories['name'] ?></a></p>
+
+<?php }?>
 			</form>
 		</div>
 		<div class="center_nav">
@@ -88,12 +88,10 @@
 <?php	} ?>						
 				</div>
 			</div>
-			<div class="product_page">
+			<div class="products_page">
 				<p><a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">5</a> -></p>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
-<img src="">
