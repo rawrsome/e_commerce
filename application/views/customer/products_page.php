@@ -36,6 +36,17 @@
 		{
 			text-align: center;
 		}
+
+		.img 
+		{
+			display: inline-block;
+		}
+
+		img 
+		{
+			width: 100px;
+			height: 100px;
+		}
 	</style>
 </head>
 <body>
@@ -68,28 +79,14 @@
 				</p>
 			</div>
 			<div class="center_nav_products">
-				<table>
-					<tbody>
-						<tr>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-						</tr>
-						<tr>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-						</tr>
-						<tr>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="img">			
+<?php foreach ($products as $product) { ?>						
+					<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"><br>
+					<a href=""><?= $product['name'] ?></a>
+					<p><?= $product['price'] ?></p>
+
+<?php	} ?>						
+				</div>
 			</div>
 			<div class="product_page">
 				<p><a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">5</a> -></p>

@@ -1,17 +1,22 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Coffes extends CI_Controller {
+class Coffees extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->output->enable_profiler();
+		// $this->output->enable_profiler();
+		$this->load->model('Coffee');
 	}
 
 	public function index()
 	{
-		$this->load->view('products_page');
-	}
-}
+		$products = $this->Coffee->get_all_products();
 
+		$this->load->view('customer/products_page', array("products"=>$products));
+	}
+
+	
+
+}
 //end of main controller
