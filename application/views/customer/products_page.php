@@ -96,8 +96,10 @@
 <body>
 	<div class="container">
 		<div class="header">
+
 			<h1>COFFREAKS</h2>
-			<h4>Shopping Cart (5)</h4>
+			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
+			
 		</div>
 		<div class="left_nav">
 
