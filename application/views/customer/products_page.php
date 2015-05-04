@@ -36,23 +36,49 @@
 			width: 200px;
 			display: inline-block;
 			position: static;
+			padding: 10px;
 		}
-
+		.left_nav button
+		{
+			padding: 3px 0px;
+		}
+		#categories_title
+		{
+			margin-top: 10px;
+			font-weight: bold;
+		}
 		.center_nav
 		{
 			border: 1px solid black;
 			display: inline-block;
 			vertical-align: top;
 			position: static;
-			width: 560px;
+			width: 566px;
 		}
-
-		.product_img
+		.center_title h1
 		{
-			border: 1px solid black;
-			width: 120px;
-			height: 120px;
-			padding: 20px;
+			display: inline-block;
+		}
+		.center_search
+		{
+			display: inline-block;
+			text-align: right;
+			margin-left: 200px;
+		}
+		.center_search p
+		{
+			margin: 0px;
+		}
+		.picture_box
+		{
+			display: inline-block;
+			margin-left: 8px;
+
+		}
+		.picture_box img
+		{
+			width: 100px;
+			height: 100px;
 		}
 
 		.product_page
@@ -65,58 +91,58 @@
 			display: inline-block;
 		}
 
-		img 
-		{
-			width: 100px;
-			height: 100px;
-		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>BayArea Roasters</h2>
+			<h1>COFFREAKS</h2>
 			<h4>Shopping Cart (5)</h4>
 		</div>
 		<div class="left_nav">
 			<form action="" method="POST">
-				<input type="text" name="search_bar" placeholder="product name...">
+				<input type="text" name="search_bar" placeholder="Search">
 				<button><type="submit" name="search"><img src="http://png-2.findicons.com/files/icons/1156/fugue/16/magnifier_medium_left.png"></button>
-				<p>Categories</p>
-				<p><a href="">Ludlow</a></p>
-				<p><a href="">Crosby</a></p>
-				<p><a href="">Tuxedos</a></p>
-				<p><a href="">Travler</a></p>
-				<p><a href="">All Suits</a></p>
+				<p id="categories_title">Categories</p>
+<?php foreach ($categories as $categories) { ?>
+
+				<p><a href='product_show/show_products/'><?= $categories['name'] ?></a></p>
+
+<?php }?>
 			</form>
 		</div>
 		<div class="center_nav">
 			<div class="center_title">
-				<h1>All Suits</h1>
-				<p><a href="">first</a> | <a href="">prev</a> | 1 | <a href="">next</a></p>
-				<p>Sorted by 
-					<select>
-						<option>Price</option>
-						<option>Most Popular</option>
-					</select>
-				</p>
+				<h1>All Coffee</h1>
+				<div class="center_search">
+					<p><a href="">first</a> | <a href="">prev</a> | 1 | <a href="">next</a></p>
+					<p>Sorted by 
+						<select>
+							<option>Most Popular</option>
+							<option>Price: High - Low</option>
+							<option>Price: Low - High</option>
+						</select>
+					</p>
+				</div>
 			</div>
 			<div class="center_nav_products">
 				<div class="center_nav_products_img">			
-<?php foreach ($products as $product) { ?>						
+<?php foreach ($products as $product) { ?>	
+<div class="picture_box">					
 					<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"><br>
-					<a href=""><?= $product['name'] ?></a>
+					<!-- $product['id'] carries products.id to display in the product_show page -->
+					<a href='product_show/show_products/<?= $product['id']; ?>'><?= $product['name'] ?></a>
 					<p><?= $product['price'] ?></p>
-
+</div>
 <?php	} ?>						
 				</div>
 			</div>
+
 			<div class="product_page">
 				<p><a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">6</a> -></p>
+
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
-<img src="">

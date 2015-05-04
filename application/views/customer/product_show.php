@@ -82,14 +82,14 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>BayArea Roasters</h2>
+			<h1>COFFREAKS</h2>
 			<h4>Shopping Cart (5)</h4>
 		</div>
 
 		<p><a href="">Go Back</a></p>
 
 		<div class="left_nav">
-			<h4>LUDLOW SUIT JACKET IN FINE-STRIPED COTTON</h4>
+			<h4><?= $name; ?></h4>
 			<p class="left_nav_main_img"></p>
 
 			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
@@ -99,16 +99,8 @@
 		</div>
 		<div class="center_nav">
 			<div class="center_nav_description">
-				<p>Timeless, versatile and seriously stylish, the Ludlow will quickly become the foundation of your suiting wardrobe. This version of the Ludlow jacket is woven in fine-striped cotton and is partially constructed—in other words, it's made with a specially developed interior that offers some structure but, because of the soft shoulder, maintains a laid-back look. This also means it's lighter and ideal for warm weather.<br>
-				-Tailored, modern cut with a trim silhouette.<br>
-				-Narrow lapel.<br>
-				-Cotton.<br>
-				-Two-button closure.<br>
-				-Nonfunctional buttons at cuffs.<br>
-				-Pickstitching along collar, lapel and pockets.<br>
-				-Double vent.<br>
-				-Dry clean.<br>
-				-Import<br>
+				<p>
+					<?= $description; ?>
 				</p>
 			</div>
 			<form action="" method="POST" class="pull-right">

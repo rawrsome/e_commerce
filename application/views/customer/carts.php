@@ -37,7 +37,7 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>BayArea Roasters</h2>
+			<h1>COFFREAKS</h2>
 			<h4>Shopping Cart (5)</h4>
 		</div>
 		<div class="cart_table">
@@ -54,13 +54,13 @@
 					<tr>
 						<td>Ludlow blazer</td>
 						<td>$299.99</td>
-						<td>1 <a href="">update</a><a href=""> del</a></td>
+						<td>1&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
 						<td>$299.99</td>
 					</tr>
 					<tr>
 						<td>Ludlow chino</td>
 						<td>$199.99</td>
-						<td>2 <a href="">update</a><a href=""> del</a></td>
+						<td>2&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
 						<td>$399.98</td>
 					</tr>
 				</tbody>
