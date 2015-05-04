@@ -23,23 +23,33 @@ class Product extends CI_Model {
 		return $this->db->query($query, array($id))->row_array();
 	}
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 495757964f1520562ff2d6929e43aa0f73140d96
 	public function get_search($name)
 	{
 	
 
 
-		$query = "SELECT * FROM prodcuts WHERE name = ?";
+		$name='%'.$name.'%';
+		$query = "SELECT * FROM products WHERE name LIKE ?";
 
-		return $this->db->query($query)->result_array();
+		//pass parameter 'name' to query function
+		return $this->db->query($query,array($name))->result_array();
 
 	}
 
+<<<<<<< HEAD
 	public function get_cart()
 	{
 		$query = "SELECT * FROM products WHERE id = ?";
 
 		return $this->db->query($query)->result_array();
 	}
+=======
+>>>>>>> 495757964f1520562ff2d6929e43aa0f73140d96
 
 }
 //  end of Model
