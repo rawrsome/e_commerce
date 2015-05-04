@@ -22,7 +22,14 @@
 			background: url(/assets/beans.png);
 			color: white;
 		}
-
+		.header h4
+		{
+			text-align: right;
+		}
+		.header h1
+		{
+			margin: 0;
+		}
 		.left_nav 
 		{
 			border: 1px solid black;
@@ -37,6 +44,7 @@
 			display: inline-block;
 			vertical-align: top;
 			position: static;
+			width: 560px;
 		}
 
 		.product_img
@@ -50,6 +58,17 @@
 		.product_page
 		{
 			text-align: center;
+		}
+
+		.img 
+		{
+			display: inline-block;
+		}
+
+		img 
+		{
+			width: 100px;
+			height: 100px;
 		}
 	</style>
 </head>
@@ -83,10 +102,17 @@
 				</p>
 			</div>
 			<div class="center_nav_products">
-<?php  ?>
+				<div class="center_nav_products_img">			
+<?php foreach ($products as $product) { ?>						
+					<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"><br>
+					<a href=""><?= $product['name'] ?></a>
+					<p><?= $product['price'] ?></p>
+
+<?php	} ?>						
+				</div>
 			</div>
 			<div class="product_page">
-				<p><a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">5</a> -></p>
+				<p><a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">6</a> -></p>
 			</div>
 		</div>
 	</div>
