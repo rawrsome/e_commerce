@@ -83,28 +83,7 @@
 				</p>
 			</div>
 			<div class="center_nav_products">
-				<table>
-					<tbody>
-						<tr>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-						</tr>
-						<tr>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-						</tr>
-						<tr>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-							<td class="product_img"><a href=""></a></td>
-						</tr>
-					</tbody>
-				</table>
+<?php  ?>
 			</div>
 			<div class="product_page">
 				<p><a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">5</a> -></p>
