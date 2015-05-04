@@ -20,5 +20,24 @@ class Products_page extends CI_Controller {
 
 		$this->load->view('customer/products_page', array('products'=>$products, 'categories'=>$categories));
 	}
+
+		public function search()
+	{
+		// $data['query'] = $this->Product->get_search();
+		// $this->load->view('products', );
+
+		//get post thing called 'search_bar' from products_page form
+		$search=$this->input->post('search_bar');
+
+		//pass search model and store array result in result
+		$result = $this->Product->get_search($search);
+
+		var_dump($search);
+		var_dump($result);
+		die();
+
+
+		$this->load->view('customer/product_show', array('name'=>$search['name'], 'description'=>$search['description']));
+	}
 }
 //end of Products_page controller
