@@ -5,18 +5,45 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
+		body
+		{
+			width: 100%;
+			height: 100%;
+			background: #FFE4B5;
+		}
+
+		.container
+		{
+			width: 800px;
+			margin: 0px auto;
+		}
 		.header 
 		{
-			background: silver;
+			background: url(/assets/beans.png);
+			color: white;
 		}
+		.header h4
+		{
+			text-align: right;
+		}
+		.header h1
+		{
+			margin: 0;
+		}
+
 
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="header">
+<<<<<<< HEAD
+			<h1>COFFREAKS</h2>
+			<h4>Shopping Cart (5)</h4>
+=======
 			<h1>Dojo eCommerce</h2>
 			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
+>>>>>>> 86240e2fefbe17715a2f1307a462755e12c539ff
 		</div>
 		<div class="cart_table">
 			<table class="table table-striped table-bordered table-hover">
@@ -32,13 +59,13 @@
 					<tr>
 						<td>Ludlow blazer</td>
 						<td>$299.99</td>
-						<td>1 <a href="">update</a><a href=""> del</a></td>
+						<td>1&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
 						<td>$299.99</td>
 					</tr>
 					<tr>
 						<td>Ludlow chino</td>
 						<td>$199.99</td>
-						<td>2 <a href="">update</a><a href=""> del</a></td>
+						<td>2&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
 						<td>$399.98</td>
 					</tr>
 				</tbody>

@@ -5,9 +5,30 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
+		body
+		{
+			width: 100%;
+			height: 100%;
+			background: #FFE4B5;
+		}
+
+		.container
+		{
+			width: 800px;
+			margin: 0px auto;
+		}
 		.header 
 		{
-			background: silver;
+			background: url(/assets/beans.png);
+			color: white;
+		}
+		.header h4
+		{
+			text-align: right;
+		}
+		.header h1
+		{
+			margin: 0;
 		}
 
 		.left_nav 
@@ -25,6 +46,12 @@
 		}
 
 		.left_nav_mini_img
+		{
+
+			display: inline-block;
+
+		}
+		.left_nav_mini_img img
 		{
 			border: 1px solid black;
 			display: inline-block;
@@ -55,8 +82,11 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>Dojo eCommerce</h2>
+
+			<h1>COFFREAKS</h2>
 			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
+			
+
 		</div>
 
 		<p><a href="/products_page/index">Go Back</a></p>
@@ -64,17 +94,11 @@
 		<div class="left_nav">
 			<h4><?= $name; ?></h4>
 			<p class="left_nav_main_img"></p>
-			<table>
-				<tbody>
-					<tr>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-					</tr>
-				</tbody>
-			</table>
+
+			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
+			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
+			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
+
 		</div>
 		<div class="center_nav">
 			<div class="center_nav_description">
@@ -96,12 +120,12 @@
 <!-- 			<table>
 				<tbody>
 					<tr> -->
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
 <!-- 					</tr>
 				</tbody>
 			</table> -->

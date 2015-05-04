@@ -25,8 +25,6 @@ class Product extends CI_Model {
 
 	public function get_search($name)
 	{
-	
-
 
 		$name='%'.$name.'%';
 		$query = "SELECT * FROM products WHERE name LIKE ?";
