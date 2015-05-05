@@ -64,20 +64,37 @@ class Admin extends CI_Model {
 	public function update_product($product){
 		//
 		$query="UPDATE products
-				SET name=?,description=?,price=?,category_id=?,updated_at=NOW()"
+				SET name=?,description=?,price=?,category_id=?,updated_at=NOW()";
 	}
 
 	public function new_category($category){
 
 	}
 	public function get_category_id_by_name($name){
-		$query="SELECT id FROM "
+		$query="SELECT id FROM ";
 	}
 
 	public function show_order($order){
 
 	}
 
+
+//-------ADMIN LOGIN
+	public function login_user($post)
+	{
+		$email = $post['log_email'];
+		$password = $post['log_password'];
+		$query = "SELECT * FROM admins WHERE admins.email = ?";
+		return $this->db->query($query, array($email))->row_array();
+		
+	}
+
+	public function login_user_reg($post)
+	{
+		$query = "SELECT * FROM admins WHERE admins.email = ?";
+		return $this->db->query($query, array($post))->row_array();
+	}
+//-------ADMIN LOGIN
 
 
 
