@@ -152,7 +152,7 @@
 
 					<p><?= $product['price'] ?></p>
 </div>
-<?php	} ?>						
+<?php	} var_dump($products);?>						
 				</div>
 			</div>
 
