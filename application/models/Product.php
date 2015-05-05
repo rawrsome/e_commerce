@@ -2,11 +2,31 @@
 
 class Product extends CI_Model {
 
-	public function get_all_products()
+	public function get_all_products_w_imgs()
 	{
-		$query = "SELECT * FROM products";
+		$query = "SELECT * FROM products
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE images.img_status='main'";
 
 		return $this->db->query($query)->result_array();
+	}
+
+	public function get_imgs_for_product($id){
+		$query="SELECT * FROM images
+				WHERE product_id=?";
+
+		return $this->db->query($query,array($id))->row_array();
+	}
+
+	public function get_similar($category){
+		$query="SELECT * FROM products
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE actegory_id=?
+				ORDER BY RAND()
+				LIMIT 3";
+		return $this->db->query($query,array($category))->result_array();
 	}
 
 	public function get_categories()
