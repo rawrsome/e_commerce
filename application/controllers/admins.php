@@ -19,7 +19,7 @@ class Admins extends CI_Controller {
 		$results = $this->Admin->login_user($this->input->post());
 // VALIDATION STARTS
 		$this->load->library("form_validation");
-		$this->form_validation->set_rules('log_email', 'Login Email', 'required');
+		$this->form_validation->set_rules('log_email', 'Login Email', 'required|valid_email');
 		$this->form_validation->set_rules('log_password', 'Login Password', 'required');
 		if($this->form_validation->run() === FALSE)
 		{
@@ -35,10 +35,12 @@ class Admins extends CI_Controller {
 
 			if($info && $post['log_password'] == $info['password'])
 			{
-				$this->load->view('admin/admin_orders', array('results'=>$results));
+				$orders=$this->Admin->get_orders();
+				$this->load->view('admin/admin_orders', array('orders'=>$orders));
 			}
 			else
 			{
+				$this->session->set_flashdata("errors", "WRONG");
 				redirect('/');
 			}
 

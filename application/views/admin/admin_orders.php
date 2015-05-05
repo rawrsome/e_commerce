@@ -63,11 +63,14 @@
 					</tr>
 				</thead>
 				<tbody>
+					<?php foreach ($orders as $order) {
+						
+					?>
 					<tr>
-						<td><a href="">420</a></td>
-						<td>Snoop Dog</td>
-						<td>4/20/2015</td>
-						<td>420 Munchies Dr. CA 90420</td>
+						<td><a href=""><?= $order['id']; ?></a></td>
+						<td><?= $order['id']; ?></td>
+						<td><?= $order['id']; ?></td>
+						<td><?= $order['id']; ?></td>
 						<td>$420.00</td>
 						<td><select>
 							<option>Shipped</option>
@@ -75,8 +78,10 @@
 							<option>Cancelled</option>
 						</select></td>
 					</tr>
+					<?php } ?>
 				</tbody>
 			</table>
+			<?php var_dump($orders); ?>
 		</div>
 	</div>
 </body>
