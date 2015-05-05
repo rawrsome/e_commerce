@@ -13,10 +13,10 @@ class Admin extends CI_Model {
 
 	
 
-
+//----------SHOW ALL ORDERS
 	public function get_orders()
 	{
-		$query="SELECT orders.id AS order_id,billings.first_name,DATE(orders.created_at) AS Date,billings.address,billings.city,billings.state,billings.zipcode,SUM(products.price) AS Total,orders.status FROM orders
+		$query="SELECT orders.id AS order_id,billings.first_name,billings.last_name,DATE(orders.created_at) AS Date,billings.address,billings.city,billings.state,billings.zipcode,SUM(products.price) AS Total,orders.status FROM orders
 			LEFT JOIN billings
 			ON orders.billing_id=billings.id
 			left join order_has_product
@@ -26,6 +26,8 @@ class Admin extends CI_Model {
 			GROUP BY orders.id DESC";
 		return $this->db->query($query)->result_array();
 	}
+
+//----------SHOW ORDERS BY STATUS (SHIPPED, ETC...)
 	public function get_orders_by_status($status){
 		$query="SELECT orders.id AS order_id,billings.first_name,DATE(orders.created_at) AS Date,billings.address,billings.city,billings.state,billings.zipcode,SUM(products.price) AS Total,orders.status FROM orders
 			LEFT JOIN billings
@@ -39,6 +41,7 @@ class Admin extends CI_Model {
 		return $this->db->query($query,array($status))->result_array();
 	}
 
+//----------SHOW ALL PRODUCTS
 	public function get_products_admin(){
 		$query="SELECT images.img_url,products.name,products.id,products.inventory,COUNT(order_has_product.product_id) AS quantity_sold from images
 				LEFT JOIN products
@@ -53,6 +56,7 @@ class Admin extends CI_Model {
 		return $this->db->query($query)->result_array();
 	}
 
+//----------SHOW INDIVIDUAL ORDER
 	public function show_order($id){
 		$query="SELECT products.name,COUNT(products.id) AS quantity,SUM(products.price) AS total,orders.status, billings.*,shippings.* FROM orders
 				LEFT JOIN billings
@@ -72,7 +76,7 @@ class Admin extends CI_Model {
 
 
 
-
+//----------PRODUCTS
 	public function new_product($product){
 		$query="INSERT INTO products (name,description,category_id,created_at,updated_at)
 				VALUES (?,?,?,NOW(),NOW())";
@@ -94,15 +98,15 @@ class Admin extends CI_Model {
 				WHERE id=?";
 		return $this->db->query($query,array($id));
 	}
+//----------PRODUCTS
 
 
-
-
+//----------IMAGES
 	public function new_image($image){
 		$query="INSERT INTO images (img_url,img_status,product_id)
 				VALUES (?,'secondary',?)";
 		return $this->db->query($query,array($image['img_url'],$image['product_id']));
-
+	}
 
 	public function update_image($image){
 		$query="UPDATE images
@@ -114,14 +118,14 @@ class Admin extends CI_Model {
 	public function delete_image($id){
 		$query="DELETE FROM images WHERE id=?";
 		return $this->db->query($query,array($id));
-
+	}
 	public function get_category_id_by_name($name){
 		$query="SELECT id FROM categories";
 	}
+//----------IMAGES
 
 
-
-
+//----------CATEGORIES
 	public function new_category($category){
 		$query="INSERT INTO categories (name)
 				VALUES (?)";
@@ -137,7 +141,7 @@ class Admin extends CI_Model {
 		$query="DELETE FROM categories WHERE id=?";
 		return $this->db->query($query,array($category));
 	}
-
+//----------CATEGORIES
 	
 
 

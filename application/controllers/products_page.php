@@ -12,7 +12,7 @@ class Products_page extends CI_Controller {
 	public function index()
 	{
 		// display products & categories in view/customer/products_page
-		$products = $this->Product->get_all_products();
+		$products = $this->Product->get_all_products_w_imgs();
 		$categories = $this->Product->get_categories();
 		// var_dump($products);
 		// die();

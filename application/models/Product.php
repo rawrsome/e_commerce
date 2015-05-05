@@ -2,9 +2,11 @@
 
 class Product extends CI_Model {
 
+
+//----------LIST ALL PRODUCTS WITH main IMAGES
 	public function get_all_products_w_imgs()
 	{
-		$query = "SELECT * FROM products
+		$query = "SELECT products.*,images.img_url,images.img_status,images.id AS img_id FROM products
 				LEFT JOIN images
 				ON products.id=images.product_id
 				WHERE images.img_status='main'";
@@ -12,6 +14,7 @@ class Product extends CI_Model {
 		return $this->db->query($query)->result_array();
 	}
 
+//----------GET ALL IMAGES (main and secondary) FOR A SPECIFIC PRODUCT
 	public function get_imgs_for_product($id){
 		$query="SELECT * FROM images
 				WHERE product_id=?";
@@ -19,6 +22,7 @@ class Product extends CI_Model {
 		return $this->db->query($query,array($id))->row_array();
 	}
 
+//----------GET RANDOM PRODUCTS IN SAME CATEGORY
 	public function get_similar($category){
 		$query="SELECT * FROM products
 				LEFT JOIN images
@@ -43,6 +47,8 @@ class Product extends CI_Model {
 		return $this->db->query($query, array($id))->row_array();
 	}
 
+
+
 	public function get_search($name)
 	{
 
@@ -53,6 +59,8 @@ class Product extends CI_Model {
 		return $this->db->query($query,array($name))->result_array();
 
 	}
+
+
 
 	public function get_cart()
 	{
