@@ -10,8 +10,7 @@ class Product_show extends CI_Controller {
 	}
 
 	public function show_products($id)
-	{
-
+	{	
 		// passing $id as parameter through the product_view page to show individual products
 		$product = $this->Product->get_product($id);
 		// var_dump($product);

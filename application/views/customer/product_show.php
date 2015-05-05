@@ -90,8 +90,9 @@
 		<div class="header">
 
 			<h1>COFFREAKS</h2>
-			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
 			
+			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
+
 
 		</div>
 
@@ -112,11 +113,19 @@
 					<?= $description; ?>
 				</p>
 			</div>
-			<form action="" method="POST" class="pull-right">
-				<select>
-					<option>Qty 1: $<?= $price; ?></option>
-					<option>Qty 2: $<?= $price * 2; ?></option>
-					<option>Qty 3: $<?= $price * 3; ?></option>
+			<form action="/cart/carts/" method="POST" class="pull-right">
+				<select name="qty">
+					<option value='1'>Qty 1: $<?= $price; ?></option>
+					<option value='2'>Qty 2: $<?= $price * 2; ?></option>
+					<option value='3'>Qty 3: $<?= $price * 3; ?></option>
+
+					<!-- passing the id for the indvidual product to be grabbed -->
+<?php if($this->session->flashdata("confirmation"))
+	{
+		echo $this->session->flashdata("confirmation");
+	} ?>
+
+					<input type='hidden' name='id' value='<?= $id; ?>'>
 					<input type="submit" value="buy" class="btn btn-primary btn-xs">
 				</select>
 			</form>
