@@ -5,9 +5,36 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
+		body
+		{
+			width: 100%;
+			height: 100%;
+			background: #FFE4B5;
+		}
+
+		.container
+		{
+			width: 800px;
+			margin: 0px auto;
+		}
 		.header 
 		{
-			background: silver;
+			background: url(/assets/beans.png);
+			background-repeat: no-repeat;
+			color: white;
+			height: 200px;
+		}
+		.header h4
+		{
+			text-align: right;
+			padding-top: 30px;
+		}
+		.header h1
+		{
+			padding-top: 50px;
+			padding-left: 50px;
+			margin: 0;
+			font-size: 60px;
 		}
 
 		.left_nav 
@@ -25,6 +52,12 @@
 		}
 
 		.left_nav_mini_img
+		{
+
+			display: inline-block;
+
+		}
+		.left_nav_mini_img img
 		{
 			border: 1px solid black;
 			display: inline-block;
@@ -55,8 +88,12 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>Dojo eCommerce</h2>
-			<h4>Shopping Cart (5)</h4>
+
+			<h1>COFFREAKS</h2>
+			
+			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
+
+
 		</div>
 
 		<p><a href="/products_page/index">Go Back</a></p>
@@ -64,17 +101,11 @@
 		<div class="left_nav">
 			<h4><?= $name; ?></h4>
 			<p class="left_nav_main_img"></p>
-			<table>
-				<tbody>
-					<tr>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-						<td class="left_nav_mini_img"></td>
-					</tr>
-				</tbody>
-			</table>
+
+			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
+			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
+			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
+
 		</div>
 		<div class="center_nav">
 			<div class="center_nav_description">
@@ -82,11 +113,19 @@
 					<?= $description; ?>
 				</p>
 			</div>
-			<form action="" method="POST" class="pull-right">
-				<select>
-					<option>Qty 1: $<?= $price; ?></option>
-					<option>Qty 2: $<?= $price * 2; ?></option>
-					<option>Qty 3: $<?= $price * 3; ?></option>
+			<form action="/cart/carts/" method="POST" class="pull-right">
+				<select name="qty">
+					<option value='1'>Qty 1: $<?= $price; ?></option>
+					<option value='2'>Qty 2: $<?= $price * 2; ?></option>
+					<option value='3'>Qty 3: $<?= $price * 3; ?></option>
+
+					<!-- passing the id for the indvidual product to be grabbed -->
+<?php if($this->session->flashdata("confirmation"))
+	{
+		echo $this->session->flashdata("confirmation");
+	} ?>
+
+					<input type='hidden' name='id' value='<?= $id; ?>'>
 					<input type="submit" value="buy" class="btn btn-primary btn-xs">
 				</select>
 			</form>
@@ -96,12 +135,12 @@
 <!-- 			<table>
 				<tbody>
 					<tr> -->
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
-						<p class="bottom_nav_similar"></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
+						<p class="bottom_nav_similar"><a href=""></a></p>
 <!-- 					</tr>
 				</tbody>
 			</table> -->
