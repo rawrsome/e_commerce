@@ -85,7 +85,8 @@ class Admin extends CI_Model {
 				SET name=?,description=?,price=?,category_id=?,updated_at=NOW()
 				WHERE id=?";
 		
-		return $this->db->query($query,array($product['name'],$product['description'],$product['price'],$product['category_id'],$product['id']));
+		return $this->db->query($query,array($product['name'],$product['description'],$product['price'],$product['category_id'],$product['id']));			
+
 	}
 
 	public function delete_product($id){
@@ -101,7 +102,7 @@ class Admin extends CI_Model {
 		$query="INSERT INTO images (img_url,img_status,product_id)
 				VALUES (?,'secondary',?)";
 		return $this->db->query($query,array($image['img_url'],$image['product_id']));
-	}
+
 
 	public function update_image($image){
 		$query="UPDATE images
@@ -113,6 +114,9 @@ class Admin extends CI_Model {
 	public function delete_image($id){
 		$query="DELETE FROM images WHERE id=?";
 		return $this->db->query($query,array($id));
+
+	public function get_category_id_by_name($name){
+		$query="SELECT id FROM categories";
 	}
 
 
@@ -136,6 +140,23 @@ class Admin extends CI_Model {
 
 	
 
+
+//-------ADMIN LOGIN
+	public function login_user($post)
+	{
+		$email = $post['log_email'];
+		$password = $post['log_password'];
+		$query = "SELECT * FROM admins WHERE admins.email = ?";
+		return $this->db->query($query, array($email))->row_array();
+		
+	}
+
+	public function login_user_reg($post)
+	{
+		$query = "SELECT * FROM admins WHERE admins.email = ?";
+		return $this->db->query($query, array($post))->row_array();
+	}
+//-------ADMIN LOGIN
 
 
 

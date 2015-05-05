@@ -8,17 +8,17 @@
 <body>
 	<div class="container">
 		<h1>Admin Login</h1>
-		<form class="form-horizontal">
+		<form action="admins/enter" method="POST" class="form-horizontal">
 		  <div class="form-group">
 		    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 		    <div class="col-sm-6">
-		      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+		      <input type="email" name="log_email" class="form-control" id="inputEmail3" placeholder="Email">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 		    <div class="col-sm-6">
-		      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+		      <input type="password" name="log_password" class="form-control" id="inputPassword3" placeholder="Password">
 		    </div>
 		  </div>
 		  <div class="form-group">
@@ -27,6 +27,11 @@
 		    </div>
 		  </div>
 		</form>
+<?php 	if($this->session->flashdata("errors"))
+		{
+			echo $this->session->flashdata("errors");
+		} 
+?>
 	</div>
 </body>
 </html>

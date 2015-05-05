@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Cart</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
@@ -43,10 +43,7 @@
 <body>
 	<div class="container">
 		<div class="header">
-
 			<h1>COFFREAKS</h2>
-
-
 		</div>
 		<div class="cart_table">
 			<table class="table table-striped table-bordered table-hover">
