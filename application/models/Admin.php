@@ -50,13 +50,15 @@ class Admin extends CI_Model {
 	}
 
 	public function get_products_admin(){
-		$query="SELECT products.id, products.name,products.inventory, COUNT(order_has_product.product_id) from products
+		$query="SELECT images.img_url,products.id,products.inventory,COUNT(order_has_product	.product_id) AS quantity_sold from images
+				LEFT JOIN products
+				ON products.id=images.product_id
 				LEFT JOIN order_has_product
 				ON products.id=order_has_product.product_id
-				left JOIN orders
+				LEFT JOIN orders
 				ON order_has_product.order_id=orders.id
-				WHERE orders.status='shipped'
-				GROUP BY products.id";
+				WHERE orders.status='shipped' AND images.img_status='main'
+				GROUP BY order_has_product.product_id";
 
 		return $this->db->query($query)->result_array();
 	}
@@ -64,14 +66,24 @@ class Admin extends CI_Model {
 	public function update_product($product){
 		//
 		$query="UPDATE products
-				SET name=?,description=?,price=?,category_id=?,updated_at=NOW()"
+				SET name=?,description=?,price=?,category_id=?,updated_at=NOW()";
+		return $this->db->query($query,array($product['name'],$product['description'],$product['price'],$product['category_id']));
 	}
 
 	public function new_category($category){
-
+		$query="INSERT INTO categories (name)
+				VALUES (?)";
+		return $this->db->query($query,array($category));
 	}
-	public function get_category_id_by_name($name){
-		$query="SELECT id FROM "
+	public function update_category($category){
+		$query="UPDATE categories
+				SET name=?
+				WHERE id=?";
+		return $this->db->query($query,array($category['name'],$category['id']));
+	}
+	public function delete_category($category){
+		$query="DELETE FROM categories WHERE id=?";
+		return $this->db->query($query,array($category));
 	}
 
 	public function show_order($order){
