@@ -20,15 +20,21 @@
 		.header 
 		{
 			background: url(/assets/beans.png);
+			background-repeat: no-repeat;
 			color: white;
+			height: 200px;
 		}
 		.header h4
 		{
 			text-align: right;
+			padding-top: 30px;
 		}
 		.header h1
 		{
+			padding-top: 50px;
+			padding-left: 50px;
 			margin: 0;
+			font-size: 60px;
 		}
 
 
@@ -37,13 +43,10 @@
 <body>
 	<div class="container">
 		<div class="header">
-<<<<<<< HEAD
+
 			<h1>COFFREAKS</h2>
-			<h4>Shopping Cart (5)</h4>
-=======
-			<h1>Dojo eCommerce</h2>
-			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
->>>>>>> 86240e2fefbe17715a2f1307a462755e12c539ff
+
+
 		</div>
 		<div class="cart_table">
 			<table class="table table-striped table-bordered table-hover">

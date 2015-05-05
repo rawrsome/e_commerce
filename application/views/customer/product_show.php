@@ -20,15 +20,21 @@
 		.header 
 		{
 			background: url(/assets/beans.png);
+			background-repeat: no-repeat;
 			color: white;
+			height: 200px;
 		}
 		.header h4
 		{
 			text-align: right;
+			padding-top: 30px;
 		}
 		.header h1
 		{
+			padding-top: 50px;
+			padding-left: 50px;
 			margin: 0;
+			font-size: 60px;
 		}
 
 		.left_nav 

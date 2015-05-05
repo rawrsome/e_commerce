@@ -17,18 +17,24 @@
 			width: 800px;
 			margin: 0px auto;
 		}
-		.header 
+		.hearder 
 		{
 			background: url(/assets/beans.png);
+			background-repeat: no-repeat;
 			color: white;
+			height: 200px;
 		}
-		.header h4
+		.hearder h4
 		{
 			text-align: right;
+			padding-top: 30px;
 		}
-		.header h1
+		.hearder h1
 		{
+			padding-top: 50px;
+			padding-left: 50px;
 			margin: 0;
+			font-size: 60px;
 		}
 		.left_nav 
 		{
@@ -95,7 +101,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="header">
+		<div class="hearder">
 
 			<h1>COFFREAKS</h2>
 			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
