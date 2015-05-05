@@ -37,13 +37,10 @@
 <body>
 	<div class="container">
 		<div class="header">
-<<<<<<< HEAD
+
 			<h1>COFFREAKS</h2>
-			<h4>Shopping Cart (5)</h4>
-=======
-			<h1>Dojo eCommerce</h2>
-			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
->>>>>>> 86240e2fefbe17715a2f1307a462755e12c539ff
+			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
+
 		</div>
 		<div class="cart_table">
 			<table class="table table-striped table-bordered table-hover">

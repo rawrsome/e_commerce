@@ -98,7 +98,8 @@
 		<div class="header">
 
 			<h1>COFFREAKS</h2>
-			<h4><a href="/carts/cart">Shopping Cart (5)</a></h4>
+				<!-- echoing out the session that's stored -->
+			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
 			
 		</div>
 		<div class="left_nav">
@@ -113,7 +114,7 @@
 
 <?php foreach ($categories as $categories) { ?>
 
-				<p><a href='product_show/show_products/'><?= $categories['name'] ?></a></p>
+				<p><a href='/product_show/show_products/'><?= $categories['name'] ?></a></p>
 
 <?php }?>			
 		</div>
@@ -134,8 +135,10 @@
 			<div class="center_nav_products">
 				<div class="center_nav_products_img">			
 <?php foreach ($products as $product) { ?>	
-<div class="picture_box">					
-					<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"><br>
+<div class="picture_box">
+					<a href="/product_show/show_products/<?= $product['id']; ?>">					
+						<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg">
+						</a><br>
 					<!-- $product['id'] carries products.id to display in the product_show page -->
 
 					<a href='/product_show/show_products/<?= $product['id']; ?>'>

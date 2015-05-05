@@ -34,7 +34,6 @@ class Product extends CI_Model {
 
 	}
 
-
 	public function get_cart()
 	{
 		$query = "SELECT * FROM products WHERE id = ?";
