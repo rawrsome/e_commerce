@@ -41,7 +41,7 @@ class Cart extends CI_Controller {
 			// var_dump($this->session->userdata('cart_total'));
 			// die();
 
-		}
+		
 
 		$this->session->set_userdata('cart_counts', $cart_count);
 		// echo $this->session->userdata('cart_counts'). " line 45";
