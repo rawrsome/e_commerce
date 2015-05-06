@@ -98,7 +98,11 @@
 
 			<h1>COFFREAKS</h2>
 			
+<<<<<<< HEAD
 			<h4><a href="/cart/checkout">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
+=======
+			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://icons.iconseeker.com/png/fullsize/aspnet/shopping-cart-add.png"></a></h4>
+>>>>>>> fef3b0b815b1fab0f822c6ca49b988d76252cb2b
 
 		</div>
 
@@ -129,6 +133,7 @@
 					<option value='1'>Qty 1: $<?= $product['price']; ?></option>
 					<option value='2'>Qty 2: $<?= $product['price'] * 2; ?></option>
 					<option value='3'>Qty 3: $<?= $product['price'] * 3; ?></option>
+				</select>
 
 					<!-- passing the id for the indvidual product to be grabbed -->
 
@@ -137,8 +142,8 @@
 					<input type='hidden' name='price' value='<?= $product['price'] ?>'>
 					<input type='hidden' name='name' value='<?= $product['name'] ?>'>
 
-					<input type="submit" value="buy" class="btn btn-primary btn-xs">
-				</select>
+
+				<input type="submit" value="buy" class="btn btn-primary btn-xs">
 			</form>
 		</div>
 		<div class="bottom_nav">
