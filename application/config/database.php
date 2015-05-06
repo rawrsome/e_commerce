@@ -16,7 +16,10 @@ else
 	$db['default']['username'] = 'root';
 	$db['default']['password'] = 'root';
 	$db['default']['database'] = 'ecom';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 }
 
