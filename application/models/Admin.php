@@ -29,9 +29,7 @@ class Admin extends CI_Model {
 
 	public function search_orders($search){
 		$search='%'.$search.'%';
-		$loopsearch=FALSE;
-		$cols=array('billings.first_name','orders.id','billings.address');
-		$i=0;
+		
 		// while($i<3){
 			$query="SELECT orders.id AS order_id,billings.first_name,DATE(orders.created_at) AS Date,billings.address,billings.city,billings.state,billings.zipcode,SUM(products.price) AS Total,orders.status FROM orders
 			LEFT JOIN billings
@@ -80,6 +78,8 @@ class Admin extends CI_Model {
 
 		return $this->db->query($query)->result_array();
 	}
+
+	
 
 //----------SHOW INDIVIDUAL ORDER
 	public function show_order($id){

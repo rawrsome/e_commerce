@@ -28,14 +28,17 @@
 	{
 		display: inline-block;
 	}
+	img{
+		width:45px;
+	}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="header">
 			<h1>Dashboard</h1>&nbsp;&nbsp;&nbsp;
-			<h2><a href="">Orders</a></h2>&nbsp;&nbsp;&nbsp;
-			<h2><a href="">Products</a></h2>&nbsp;&nbsp;&nbsp;
+			<h2><a href="/admins/show_orders">Orders</a></h2>&nbsp;&nbsp;&nbsp;
+			<h2><a href="/admins/products_show">Products</a></h2>&nbsp;&nbsp;&nbsp;
 			<p class="pull-right"><a href="">log off</a></p>
 		</div>
 		<hr>
@@ -61,14 +64,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td></td>
-						<td>76</td>
-						<td>Gas</td>
-						<td>200</td>
-						<td>7</td>
-						<td><a href="">Edit</a>&nbsp;&nbsp;&nbsp;<a href="">Delete</a></td>
-					</tr>
+					<?php foreach ($results as $result): ?>
+						
+						<tr>
+							<td><img src=<?= $result['img_url'] ?>></td>
+							<td><?= $result['id'] ?></td>
+							<td><?= $result['name'] ?></td>
+							<td><?= $result['inventory'] ?></td>
+							<td><?= $result['quantity_sold'] ?></td>
+							<td><a href="">Edit</a>&nbsp;&nbsp;&nbsp;<a href="">Delete</a></td>
+						</tr>
+
+					<?php endforeach ?>
 				</tbody>
 			</table>
 		</div>

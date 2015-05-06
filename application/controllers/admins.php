@@ -56,10 +56,10 @@ class Admins extends CI_Controller {
 			$this->load->view('admin/admin_orders', array('orders'=>$result,'status'=>$status));
 		}
 		else{
-		$search=$this->input->post('search');
-		$result=$this->Admin->search_orders($search);
-		$this->load->view('admin/admin_orders', array('orders'=>$result));
-		// var_dump($result);
+			$search=$this->input->post('search');
+			$result=$this->Admin->search_orders($search);
+			$this->load->view('admin/admin_orders', array('orders'=>$result));
+			// var_dump($result);
 		}
 
 
@@ -68,6 +68,15 @@ class Admins extends CI_Controller {
 	public function show_order($id){
 		$result=$this->Admin->show_order($id);
 		$this->load->view('admin/admin_orders_show',array('result'=>$result));
+	}
+	public function show_orders(){
+		$orders=$this->Admin->get_orders();
+				$this->load->view('admin/admin_orders', array('orders'=>$orders));
+	}
+
+	public function products_show(){
+		$results=$this->Admin->get_products_admin();
+		$this->load->view('admin/admin_products',array('results'=>$results));
 	}
 
 

@@ -46,8 +46,8 @@
 	<div class="container">
 		<div class="header">
 			<h1>Dashboard</h1>&nbsp;&nbsp;&nbsp;
-			<h2><a href="">Orders</a></h2>&nbsp;&nbsp;&nbsp;
-			<h2><a href="">Products</a></h2>&nbsp;&nbsp;&nbsp;
+			<h2><a href="/admins/show_orders">Orders</a></h2>&nbsp;&nbsp;&nbsp;
+			<h2><a href="/admins/products_show">Products</a></h2>&nbsp;&nbsp;&nbsp;
 			<p class="pull-right"><a href="">log off</a></p>
 		</div>
 		<hr>
