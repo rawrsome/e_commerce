@@ -5,6 +5,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
 		body
 		{
 			width: 100%;
@@ -43,11 +47,13 @@
 		}
 		.left_nav 
 		{
-			border: 1px solid black;
-			width: 200px;
+			/*border: 1px solid black;*/
+			width: 205px;
 			display: inline-block;
 			position: static;
 			padding: 10px;
+			background: #DEB887;
+			border-radius: 5px;
 		}
 		.left_nav button
 		{
@@ -68,7 +74,7 @@
 			display: inline-block;
 			vertical-align: top;
 			position: static;
-			width: 566px;
+			width: 560px;
 		}
 		.center_title h1
 		{
@@ -78,7 +84,7 @@
 		{
 			display: inline-block;
 			text-align: right;
-			margin-left: 200px;
+			margin-left: 190px;
 		}
 		.center_search p
 		{
@@ -97,6 +103,10 @@
 		{
 			width: 100px;
 			height: 100px;
+			border: 1px solid #999;
+			background-color: #fcfcfc;
+			padding: 3px;
+
 		}
 
 		.product_page
@@ -159,7 +169,7 @@
 					<a href="/product_show/show_products/<?= $product['id']; ?>">					
 						<img class="img-circle" src="<?= $product['img_url'] ?>">
 						</a>
-					
+
 					<a href='/product_show/show_products/<?= $product['id']; ?>'>
 						<?= $product['name'] ?></a>
 

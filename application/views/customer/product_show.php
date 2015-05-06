@@ -52,7 +52,7 @@
 
 		.left_nav_main_img
 		{
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			width: 270px;
 			height: 270px;
 		}
@@ -65,10 +65,11 @@
 		}
 		.left_nav_mini_img img
 		{
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			display: inline-block;
 			width: 54px;
 			height: 54px;
+			margin-top: 10px;
 
 		}
 
@@ -84,7 +85,7 @@
 		{
 			width: 100px;
 			height: 100px;
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			display: inline-block;
 			margin-right: 15px;
 			text-align: center;
