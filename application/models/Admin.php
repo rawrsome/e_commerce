@@ -64,26 +64,11 @@ class Admin extends CI_Model {
 		return $this->db->query($query,array($status))->result_array();
 	}
 
-//----------SHOW ALL PRODUCTS
-	public function get_products_admin(){
-		$query="SELECT images.img_url,products.name,products.id,products.inventory,COUNT(order_has_product.product_id) AS quantity_sold from images
-				LEFT JOIN products
-				ON products.id=images.product_id
-				LEFT JOIN order_has_product
-				ON products.id=order_has_product.product_id
-				LEFT JOIN orders
-				ON order_has_product.order_id=orders.id
-				WHERE orders.status='shipped' AND images.img_status='main'
-				GROUP BY order_has_product.product_id";
 
-		return $this->db->query($query)->result_array();
-	}
-
-	
 
 //----------SHOW INDIVIDUAL ORDER
 	public function show_order($id){
-		$query="SELECT products.name,COUNT(products.id) AS quantity,SUM(products.price) AS total,orders.status, billings.*,shippings.* FROM orders
+		$query="SELECT products.name,COUNT(products.id) AS quantity,SUM(products.price) AS total,orders.status,shippings.*, billings.* FROM orders
 				LEFT JOIN billings
 				ON orders.billing_id=billings.id
 	            LEFT JOIN shippings
@@ -98,7 +83,34 @@ class Admin extends CI_Model {
 		return $this->db->query($query,array($id))->row_array();
 	}
 
+//----------SHOW ALL PRODUCTS
+	public function get_products_admin(){
+		$query="SELECT images.img_url,products.name,products.id,products.inventory,COUNT(order_has_product.product_id) AS quantity_sold from images
+				LEFT JOIN products
+				ON products.id=images.product_id
+				LEFT JOIN order_has_product
+				ON products.id=order_has_product.product_id
+				LEFT JOIN orders
+				ON order_has_product.order_id=orders.id
+				WHERE orders.status='shipped' AND images.img_status='main'
+				GROUP BY order_has_product.product_id";
 
+		return $this->db->query($query)->result_array();
+	}
+	public function search_products_admin($search){
+		$search='%'.$search.'%';
+		$query="SELECT images.img_url,products.name,products.id,products.inventory,COUNT(order_has_product.product_id) AS quantity_sold from images
+				LEFT JOIN products
+				ON products.id=images.product_id
+				LEFT JOIN order_has_product
+				ON products.id=order_has_product.product_id
+				LEFT JOIN orders
+				ON order_has_product.order_id=orders.id
+				WHERE orders.status='shipped' AND images.img_status='main' AND products.name LIKE ? OR products.id LIKE ?
+				GROUP BY order_has_product.product_id";
+
+		return $this->db->query($query,array($search,$search))->result_array();
+	}
 
 
 //----------PRODUCTS

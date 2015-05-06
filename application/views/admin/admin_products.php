@@ -43,8 +43,8 @@
 		</div>
 		<hr>
 		<div class="search">
-			<form action="" method="POST">
-				<input type="text" name="" placeholder="Search">
+			<form action="/admins/search_products_admin" method="POST">
+				<input type="text" name="search" placeholder="Search">
 				<input type="submit" name="" value="Search" class="btn btn-default btn-xs">
 			</form>
 			<form action="" method="POST" class="pull-right">

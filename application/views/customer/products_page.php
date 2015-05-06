@@ -124,7 +124,6 @@
 <body>
 	<div class="container">
 		<div class="hearder">
-
 			<h1>COFFREAKS</h2>
 				<!-- echoing out the session that's stored -->
 			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
@@ -140,17 +139,17 @@
 			</form>
 
 
-
+				<p><a href='/products_page/view_category/all'>Show All</a></p>
 
 <?php foreach ($count_categories as $count_categories) { ?>
 
-				<p><a href='/product_show/show_products/'><?= $count_categories['name'] ?>(<?= $count_categories['count'] ?>)</a></p>
+				<p><a href='/products_page/view_category/<?= $count_categories['id'] ?>'><?= $count_categories['name'] ?>(<?= $count_categories['count'] ?>)</a></p>
 
 <?php }?>
 		</div>
 		<div class="center_nav">
 			<div class="center_title">
-				<h1>All Coffee</h1>
+				<h1><?= $cat_name ?></h1>
 				<div class="center_search">
 					<p><a href="">first</a> | <a href="">prev</a> | 1 | <a href="">next</a></p>
 					<p>Sorted by 
