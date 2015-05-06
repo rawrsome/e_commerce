@@ -122,6 +122,8 @@
 					<?= $product['description']; ?>
 				</p>
 			</div>
+
+
 			<form action="/cart/carts/" method="POST" class="pull-right">
 				<select name="qty">
 					<option value='1'>Qty 1: $<?= $product['price']; ?></option>
@@ -129,10 +131,7 @@
 					<option value='3'>Qty 3: $<?= $product['price'] * 3; ?></option>
 
 					<!-- passing the id for the indvidual product to be grabbed -->
-<?php if($this->session->flashdata("confirmation"))
-	{
-		echo $this->session->flashdata("confirmation");
-	} ?>
+
 
 					<input type='hidden' name='id' value='<?= $id; ?>'>
 
