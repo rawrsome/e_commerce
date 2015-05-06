@@ -52,7 +52,7 @@
 
 		.left_nav_main_img
 		{
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			width: 270px;
 			height: 270px;
 		}
@@ -65,10 +65,11 @@
 		}
 		.left_nav_mini_img img
 		{
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			display: inline-block;
 			width: 54px;
 			height: 54px;
+			margin-top: 10px;
 
 		}
 
@@ -84,7 +85,7 @@
 		{
 			width: 100px;
 			height: 100px;
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			display: inline-block;
 			margin-right: 15px;
 			text-align: center;
@@ -130,13 +131,18 @@
 					<option value='2'>Qty 2: $<?= $product['price'] * 2; ?></option>
 					<option value='3'>Qty 3: $<?= $product['price'] * 3; ?></option>
 
+<<<<<<< HEAD
 					<!-- passing the id for the indvidual product to be grabbed -->
+=======
+			
+
+>>>>>>> d284b41d882f03195d59793c367d032c9fb90504
 
 
-					<input type='hidden' name='id' value='<?= $id; ?>'>
+					<input type='hidden' name='id' value='<?= $product['id']; ?>'>
 
-					<input type='hidden' name='price' value='<?= $price ?>'>
-					<input type='hidden' name='name' value='<?= $name ?>'>
+					<input type='hidden' name='price' value='<?= $product['price'] ?>'>
+					<input type='hidden' name='name' value='<?= $product['name'] ?>'>
 
 					<input type="submit" value="buy" class="btn btn-primary btn-xs">
 				</select>

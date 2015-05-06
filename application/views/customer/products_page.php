@@ -5,6 +5,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
 		body
 		{
 			width: 100%;
@@ -43,11 +47,13 @@
 		}
 		.left_nav 
 		{
-			border: 1px solid black;
-			width: 200px;
+			/*border: 1px solid black;*/
+			width: 205px;
 			display: inline-block;
 			position: static;
 			padding: 10px;
+			background: #DEB887;
+			border-radius: 5px;
 		}
 		.left_nav button
 		{
@@ -68,7 +74,7 @@
 			display: inline-block;
 			vertical-align: top;
 			position: static;
-			width: 566px;
+			width: 560px;
 		}
 		.center_title h1
 		{
@@ -78,7 +84,7 @@
 		{
 			display: inline-block;
 			text-align: right;
-			margin-left: 200px;
+			margin-left: 190px;
 		}
 		.center_search p
 		{
@@ -140,8 +146,7 @@
 
 				<p><a href='/product_show/show_products/'><?= $count_categories['name'] ?>(<?= $count_categories['count'] ?>)</a></p>
 
-
-<?php }?>			
+<?php }?>
 		</div>
 		<div class="center_nav">
 			<div class="center_title">
@@ -163,8 +168,7 @@
 <div class="picture_box">
 					<a href="/product_show/show_products/<?= $product['id']; ?>">					
 						<img class="img-circle" src="<?= $product['img_url'] ?>">
-						</a><br>
-					<!-- $product['id'] carries products.id to display in the product_show page -->
+						</a>
 
 					<a href='/product_show/show_products/<?= $product['id']; ?>'>
 						<?= $product['name'] ?></a>
