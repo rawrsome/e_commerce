@@ -97,6 +97,10 @@
 		{
 			width: 100px;
 			height: 100px;
+			border: 1px solid #999;
+			background-color: #fcfcfc;
+			padding: 3px;
+
 		}
 
 		.product_page
