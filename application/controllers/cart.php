@@ -30,19 +30,26 @@ class Cart extends CI_Controller {
 			{
 				$cart_count += $cart_total[$i]['qty']; 
 			}
-			// echo $cart_count;
-			// var_dump($this->input->post());
-			// var_dump($this->session->userdata('cart_total'));
-			// die();
+			echo $cart_count;
+			var_dump($this->input->post());
+			var_dump($this->session->userdata('cart_total'));
+			die();
 		}
 		// var_dump($cart_count);
 		// die();
 		$this->session->set_userdata('cart_counts', $cart_count);
 		// echo $this->session->userdata('cart_counts'). " line 45";
 		// $this->load->view('customer/product_show/', array('cart_count'=>$cart_count));
-		$message = "hi";
-		$this->session->set_flashdata("confirmation", $message);
-		redirect('/');
+
+
+
+		
+		$this->load->view('customer/carts', array());
+	}
+
+	public function checkout()
+	{
+		
 	}
 }
 
