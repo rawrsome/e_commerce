@@ -128,16 +128,14 @@
 					<option value='2'>Qty 2: $<?= $product['price'] * 2; ?></option>
 					<option value='3'>Qty 3: $<?= $product['price'] * 3; ?></option>
 
-					<!-- passing the id for the indvidual product to be grabbed -->
-<?php if($this->session->flashdata("confirmation"))
-	{
-		echo $this->session->flashdata("confirmation");
-	} ?>
+			
 
-					<input type='hidden' name='id' value='<?= $id; ?>'>
 
-					<input type='hidden' name='price' value='<?= $price ?>'>
-					<input type='hidden' name='name' value='<?= $name ?>'>
+
+					<input type='hidden' name='id' value='<?= $product['id']; ?>'>
+
+					<input type='hidden' name='price' value='<?= $product['price'] ?>'>
+					<input type='hidden' name='name' value='<?= $product['name'] ?>'>
 
 					<input type="submit" value="buy" class="btn btn-primary btn-xs">
 				</select>

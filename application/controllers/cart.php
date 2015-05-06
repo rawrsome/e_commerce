@@ -41,7 +41,7 @@ class Cart extends CI_Controller {
 			// var_dump($this->session->userdata('cart_total'));
 			// die();
 
-		}
+		
 
 		$this->session->set_userdata('cart_counts', $cart_count);
 		// echo $this->session->userdata('cart_counts'). " line 45";
@@ -49,11 +49,13 @@ class Cart extends CI_Controller {
 
 
 		
+		$message = "Item added";
+		$this->session->set_flashdata("confirmation", $message);
 
 
 
-		
-		// $this->load->view('customer/carts', array());
+		redirect('products_page');
+		// $this->load->view('/Product_show/show_products');
 	}
 
 	public function checkout()
