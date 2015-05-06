@@ -10,7 +10,12 @@
 		{
 			width: 100%;
 			height: 100%;
-			background: #FFE4B5;
+			background: url(http://38.media.tumblr.com/7ef87fea367244e61bf404b934aa0ab9/tumblr_mlaqezFGke1s5jjtzo1_500.png);
+			background-color: #FFE4B5;
+			background-position: right bottom;
+			background-attachment: fixed;
+			background-size: 25%;
+			background-repeat: no-repeat;
 		}
 
 		.container
@@ -100,8 +105,13 @@
 		<p><a href="/products_page/index">Go Back</a></p>
 
 		<div class="left_nav">
+<<<<<<< HEAD
 			<h4><?= $product['name']; ?></h4>
 			<img class="left_nav_main_img" src=<?= $product['img_url'] ?>>
+=======
+			<h4><?= $name; ?></h4>
+			<p class="left_nav_main_img"><img src=""></p>
+>>>>>>> 6cdac11ba83964d580752de473e070d574fa5a00
 
 			<?php foreach($product_imgs as $img){?>
 
@@ -128,6 +138,8 @@
 	} ?>
 
 					<input type='hidden' name='id' value='<?= $id; ?>'>
+					<input type='hidden' name='price' value='<?= $price; ?>'>
+					<input type='hidden' name='name' value='<?= $name; ?>'>
 					<input type="submit" value="buy" class="btn btn-primary btn-xs">
 				</select>
 			</form>
