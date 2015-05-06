@@ -105,13 +105,10 @@
 		<p><a href="/products_page/index">Go Back</a></p>
 
 		<div class="left_nav">
-<<<<<<< HEAD
+
 			<h4><?= $product['name']; ?></h4>
 			<img class="left_nav_main_img" src=<?= $product['img_url'] ?>>
-=======
-			<h4><?= $name; ?></h4>
-			<p class="left_nav_main_img"><img src=""></p>
->>>>>>> 6cdac11ba83964d580752de473e070d574fa5a00
+
 
 			<?php foreach($product_imgs as $img){?>
 
@@ -149,7 +146,7 @@
 
 				<?php foreach ($similar as $img): ?>
 					
-					<p class="bottom_nav_similar"><a href=""></a><img src=<?=$img['img_url']?>></p>
+					<p class="bottom_nav_similar"><a href=""></a><img class="bottom_nav_similar" src=<?=$img['img_url']?>></p>
 
 				<?php endforeach ?>
 
