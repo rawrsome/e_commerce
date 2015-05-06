@@ -116,11 +116,15 @@
 				<p id="categories_title">Categories</p>
 
 
+
+
 			</form>
 
-<?php foreach ($categories as $categories) { ?>
 
-				<p><a href='/product_show/show_products/'><?= $categories['name'] ?></a></p>
+
+<?php foreach ($count_categories as $count_categories) { ?>
+
+				<p><a href='/product_show/show_products/'><?= $count_categories['name'] ?>(<?= $count_categories['count'] ?>)</a></p>
 
 <?php }?>			
 		</div>

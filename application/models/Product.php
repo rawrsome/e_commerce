@@ -27,15 +27,19 @@ class Product extends CI_Model {
 		$query="SELECT * FROM products
 				LEFT JOIN images
 				ON products.id=images.product_id
-				WHERE actegory_id=?
+				WHERE category_id=?
 				ORDER BY RAND()
 				LIMIT 3";
 		return $this->db->query($query,array($category))->result_array();
 	}
 
-	public function get_categories()
+
+	public function get_count_category()
 	{
-		$query = "SELECT DISTINCT name from categories";
+		$query = "SELECT *, COUNT(category_id) AS count FROM products
+				  LEFT JOIN categories
+				  ON products.category_id = categories.id
+				  GROUP BY category_id";
 
 		return $this->db->query($query)->result_array();
 	}
@@ -46,8 +50,6 @@ class Product extends CI_Model {
 
 		return $this->db->query($query, array($id))->row_array();
 	}
-
-
 
 	public function get_search($name)
 	{
@@ -60,15 +62,12 @@ class Product extends CI_Model {
 
 	}
 
-
-
 	public function get_cart()
 	{
 		$query = "SELECT * FROM products WHERE id = ?";
 
 		return $this->db->query($query)->result_array();
 	}
-
 
 }
 //  end of Model

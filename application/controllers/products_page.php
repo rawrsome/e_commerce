@@ -13,11 +13,16 @@ class Products_page extends CI_Controller {
 	{
 		// display products & categories in view/customer/products_page
 		$products = $this->Product->get_all_products_w_imgs();
-		$categories = $this->Product->get_categories();
+
+		$count_categories = $this->Product->get_count_category();
+
 		// var_dump($products);
 		// die();
 
-		$this->load->view('customer/products_page', array('products'=>$products, 'categories'=>$categories));
+		$this->load->view('customer/products_page', array('products'=>$products, 'count_categories'=>$count_categories));
+
+		// var_dump($count_categories);
+		// die();
 	}
 
 	public function search()
@@ -28,9 +33,9 @@ class Products_page extends CI_Controller {
 		//pass search model and store array result in result
 		$result = $this->Product->get_search($search);
 
-		var_dump($search);
-		var_dump($result);
-		die();
+		// var_dump($search);
+		// var_dump($result);
+		// die();
 
 		$this->load->view('customer/product_show', array('name'=>$search['name'], 'description'=>$search['description']));
 	}
