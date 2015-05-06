@@ -15,11 +15,11 @@ class Product extends CI_Model {
 	}
 
 //----------GET ALL IMAGES (main and secondary) FOR A SPECIFIC PRODUCT
-	public function get_imgs_for_product($id){
-		$query="SELECT * FROM images
-				WHERE product_id=?";
+	public function get_2nd_imgs_for_product($id){
+			$query="SELECT * FROM images
+					WHERE product_id=? AND img_status='secondary'";
 
-		return $this->db->query($query,array($id))->row_array();
+		return $this->db->query($query,array($id))->result_array();
 	}
 
 //----------GET RANDOM PRODUCTS IN SAME CATEGORY
@@ -27,9 +27,9 @@ class Product extends CI_Model {
 		$query="SELECT * FROM products
 				LEFT JOIN images
 				ON products.id=images.product_id
-				WHERE actegory_id=?
+				WHERE category_id=?
 				ORDER BY RAND()
-				LIMIT 3";
+				LIMIT 6";
 		return $this->db->query($query,array($category))->result_array();
 	}
 
@@ -42,7 +42,10 @@ class Product extends CI_Model {
 
 	public function get_product($id)
 	{
-		$query = "SELECT * FROM products WHERE products.id = ?";
+		$query = "SELECT * FROM products 
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE products.id = ?";
 
 		return $this->db->query($query, array($id))->row_array();
 	}

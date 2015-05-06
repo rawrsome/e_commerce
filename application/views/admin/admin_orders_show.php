@@ -60,6 +60,7 @@
 	</style>
 </head>
 <body>
+	<?php var_dump($result); ?>
 	<div class="container">
 		<div class="header">
 			<h1>Dashboard</h1>&nbsp;&nbsp;&nbsp;

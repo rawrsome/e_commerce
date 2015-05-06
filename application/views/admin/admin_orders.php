@@ -4,6 +4,18 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#stat').change(function(){
+				console.log($('#stat').val());
+				var status=$('#stat').val();
+				$('#status_hidden').val(status);
+				console.log($('#status_hidden').val());
+				$('form').submit();
+			})
+		})
+
+	</script>
 	<style type="text/css">
 	body
 	{
@@ -42,12 +54,16 @@
 		<div class="search">
 			<form action="/admins/search_orders" method="POST">
 				<input type="text" name="search" placeholder="Search">
+				<input id="status_hidden" type="hidden" name="status" value="show_all">
 				<input type="submit" value="Search" class="btn btn-default btn-xs">
 			</form>
-			<select class="pull-right">
-				<option>Show all</option>
-				<option>Shipped</option>
-				<option>Cancelled</option>
+			<select id="stat" name="status" class="pull-right">
+
+				<option >Status</option>
+				<option value="show_all">Show all</option>
+				<option value="shipped">Shipped</option>
+				<option value="processing">Processing</option>
+				<option value="cancelled">Cancelled</option>
 			</select>
 		</div>
 		<div class="data_table">
@@ -67,17 +83,19 @@
 						
 					?>
 					<tr>
-						<td><a href=""><?= $order['order_id']; ?></a></td>
+						<td><a href="/admins/show_order/<?= $order['order_id']; ?>"><?= $order['order_id']; ?></a></td>
 						<td><?= $order['first_name']; ?></td>
 						<td><?= $order['Date']; ?></td>
 						<td><?= $order['address'].' '.$order['city'].', '.$order['state'].' '.$order['zipcode']; ?></td>
 						<td>$<?= $order['Total']; ?></td>
-						<td><select>
-							<option><?= $order['status']; ?></option>
+						<td><?= $order['status']; ?>
+							<!-- <select>
+							<option>put da status herr</option>
 							<option>Shipped</option>
 							<option>Order in process</option>
 							<option>Cancelled</option>
-						</select></td>
+						</select> -->
+					</td>
 					</tr>
 					<?php } ?>
 				</tbody>

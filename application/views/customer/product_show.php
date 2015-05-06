@@ -93,31 +93,32 @@
 			
 			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
 
-
+			
 		</div>
 
 		<p><a href="/products_page/index">Go Back</a></p>
 
 		<div class="left_nav">
-			<h4><?= $name; ?></h4>
-			<p class="left_nav_main_img"></p>
+			<h4><?= $product['name']; ?></h4>
+			<img class="left_nav_main_img" src=<?= $product['img_url'] ?>>
 
-			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
-			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
-			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
+			<?php foreach($product_imgs as $img){?>
 
+				<p class="left_nav_mini_img"><a href=""><img src=<?= $img['img_url'] ?>></a></p>
+			
+			<?php } ?>
 		</div>
 		<div class="center_nav">
 			<div class="center_nav_description">
 				<p>
-					<?= $description; ?>
+					<?= $product['description']; ?>
 				</p>
 			</div>
 			<form action="/cart/carts/" method="POST" class="pull-right">
 				<select name="qty">
-					<option value='1'>Qty 1: $<?= $price; ?></option>
-					<option value='2'>Qty 2: $<?= $price * 2; ?></option>
-					<option value='3'>Qty 3: $<?= $price * 3; ?></option>
+					<option value='1'>Qty 1: $<?= $product['price']; ?></option>
+					<option value='2'>Qty 2: $<?= $product['price'] * 2; ?></option>
+					<option value='3'>Qty 3: $<?= $product['price'] * 3; ?></option>
 
 					<!-- passing the id for the indvidual product to be grabbed -->
 <?php if($this->session->flashdata("confirmation"))
@@ -135,12 +136,13 @@
 <!-- 			<table>
 				<tbody>
 					<tr> -->
-						<p class="bottom_nav_similar"><a href=""></a></p>
-						<p class="bottom_nav_similar"><a href=""></a></p>
-						<p class="bottom_nav_similar"><a href=""></a></p>
-						<p class="bottom_nav_similar"><a href=""></a></p>
-						<p class="bottom_nav_similar"><a href=""></a></p>
-						<p class="bottom_nav_similar"><a href=""></a></p>
+
+				<?php foreach ($similar as $img): ?>
+					
+					<p class="bottom_nav_similar"><a href=""></a><img src=<?=$img['img_url']?>></p>
+
+				<?php endforeach ?>
+						
 <!-- 					</tr>
 				</tbody>
 			</table> -->
