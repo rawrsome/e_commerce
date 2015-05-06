@@ -40,6 +40,35 @@ class Product extends CI_Model {
 		return $this->db->query($query)->result_array();
 	}
 
+	
+
+
+
+	public function get_category_count()
+	{
+		$query = "SELECT *, COUNT(products.id) AS count FROM products 
+				  LEFT JOIN categories 
+				  ON categories.id = products.category_id
+				  GROUP BY products.category_id";
+
+		// $query = "SELECT categories.id, COUNT(*) FROM categories GROUP BY categories"
+
+		// return $this->db->query($query)->result_array();
+	}
+
+	
+	public function get_price_cart($price)
+	{
+		$query = "SELECT products.price FROM products WHERE products.id = ?";
+
+		return $this->db->query($query)->row_array();
+	}
+
+
+
+
+
+
 	public function get_product($id)
 	{
 		$query = "SELECT * FROM products WHERE products.id = ?";
@@ -57,7 +86,6 @@ class Product extends CI_Model {
 
 		//pass parameter 'name' to query function
 		return $this->db->query($query,array($name))->result_array();
-
 	}
 
 
