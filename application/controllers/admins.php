@@ -49,4 +49,18 @@ class Admins extends CI_Controller {
 	}
 //-----------------------------ADMIN LOGIN
 
+	public function search_orders(){
+		$search=$this->input->post('search');
+		$result=$this->Admin->search_orders($search);
+		$this->load->view('admin/admin_orders', array('orders'=>$result));
+		// var_dump($result);
+	}
+
+
+
+
+
+
+
+
 }

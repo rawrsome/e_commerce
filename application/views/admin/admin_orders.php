@@ -40,9 +40,9 @@
 		</div>
 		<hr>
 		<div class="search">
-			<form action="" method="POST">
-				<input type="text" name="" placeholder="Search">
-				<input type="submit" name="" value="Search" class="btn btn-default btn-xs">
+			<form action="/admins/search_orders" method="POST">
+				<input type="text" name="search" placeholder="Search">
+				<input type="submit" value="Search" class="btn btn-default btn-xs">
 			</form>
 			<select class="pull-right">
 				<option>Show all</option>
@@ -67,12 +67,13 @@
 						
 					?>
 					<tr>
-						<td><a href=""><?= $order['id']; ?></a></td>
-						<td><?= $order['id']; ?></td>
-						<td><?= $order['id']; ?></td>
-						<td><?= $order['id']; ?></td>
-						<td>$420.00</td>
+						<td><a href=""><?= $order['order_id']; ?></a></td>
+						<td><?= $order['first_name']; ?></td>
+						<td><?= $order['Date']; ?></td>
+						<td><?= $order['address'].' '.$order['city'].', '.$order['state'].' '.$order['zipcode']; ?></td>
+						<td>$<?= $order['Total']; ?></td>
 						<td><select>
+							<option><?= $order['status']; ?></option>
 							<option>Shipped</option>
 							<option>Order in process</option>
 							<option>Cancelled</option>
@@ -81,7 +82,6 @@
 					<?php } ?>
 				</tbody>
 			</table>
-			<?php var_dump($orders); ?>
 		</div>
 	</div>
 </body>
