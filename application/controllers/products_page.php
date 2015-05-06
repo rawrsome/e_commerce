@@ -14,6 +14,7 @@ class Products_page extends CI_Controller {
 		// display products & categories in view/customer/products_page
 		$products = $this->Product->get_all_products_w_imgs();
 
+
 		$count_categories = $this->Product->get_count_category();
 
 		// var_dump($products);
@@ -23,6 +24,7 @@ class Products_page extends CI_Controller {
 
 		// var_dump($count_categories);
 		// die();
+
 	}
 
 	public function search()

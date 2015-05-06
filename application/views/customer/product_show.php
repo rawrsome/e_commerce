@@ -126,8 +126,10 @@
 	} ?>
 
 					<input type='hidden' name='id' value='<?= $id; ?>'>
+
 					<input type='hidden' name='price' value='<?= $price ?>'>
 					<input type='hidden' name='name' value='<?= $name ?>'>
+
 					<input type="submit" value="buy" class="btn btn-primary btn-xs">
 				</select>
 			</form>

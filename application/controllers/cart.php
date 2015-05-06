@@ -9,8 +9,14 @@ class Cart extends CI_Controller {
 		$this->load->model('Product');
 	}
 
+	public function index()
+	{
+		$this->load->view('customer/product_show');
+	}
+
 	public function carts()
 	{
+
 		// set session if it is not set
 		if(! $this->session->userdata('cart_total'))
 		{
@@ -20,8 +26,7 @@ class Cart extends CI_Controller {
 
 		$cart_total = $this->session->userdata('cart_total');
 
-		if($this->input->post('id'))
-		{
+		
 			$cart_total[] = $this->input->post();
 			$this->session->set_userdata('cart_total', $cart_total);
 			$cart_count = 0;
@@ -30,16 +35,17 @@ class Cart extends CI_Controller {
 			{
 				$cart_count += $cart_total[$i]['qty']; 
 			}
-			// echo $cart_count;
-			// var_dump($this->input->post());
-			// var_dump($this->session->userdata('cart_total'));
-			// die();
-		}
+			echo $cart_count;
+			var_dump($this->input->post());
+			var_dump($this->session->userdata('cart_total'));
+			die();
+		
 		// var_dump($cart_count);
 		// die();
 		$this->session->set_userdata('cart_counts', $cart_count);
 		// echo $this->session->userdata('cart_counts'). " line 45";
 		// $this->load->view('customer/product_show/', array('cart_count'=>$cart_count));
+<<<<<<< HEAD
 
 
 
@@ -50,6 +56,14 @@ class Cart extends CI_Controller {
 	public function checkout()
 	{
 		
+=======
+		
+		$message = "Item added";
+		$this->session->set_flashdata("confirmation", $message);
+
+		
+	
+>>>>>>> 7b98b8c327d5d3da80e15545635c7d9ee0390fc2
 	}
 }
 
