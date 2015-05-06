@@ -9,7 +9,12 @@
 		{
 			width: 100%;
 			height: 100%;
-			background: #FFE4B5;
+			background: url(http://38.media.tumblr.com/7ef87fea367244e61bf404b934aa0ab9/tumblr_mlaqezFGke1s5jjtzo1_500.png);
+			background-color: #FFE4B5;
+			background-position: right bottom;
+			background-attachment: fixed;
+			background-size: 25%;
+			background-repeat: no-repeat;
 		}
 
 		.container
@@ -100,7 +105,7 @@
 
 		<div class="left_nav">
 			<h4><?= $name; ?></h4>
-			<p class="left_nav_main_img"></p>
+			<p class="left_nav_main_img"><img src=""></p>
 
 			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
 			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>

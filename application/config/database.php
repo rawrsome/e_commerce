@@ -18,8 +18,6 @@ else
 	$db['default']['database'] = 'ecom';
 
 
-}
-
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

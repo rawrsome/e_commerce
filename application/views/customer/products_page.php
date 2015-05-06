@@ -9,7 +9,12 @@
 		{
 			width: 100%;
 			height: 100%;
-			background: #FFE4B5;
+			background: url(http://38.media.tumblr.com/7ef87fea367244e61bf404b934aa0ab9/tumblr_mlaqezFGke1s5jjtzo1_500.png);
+			background-color: #FFE4B5;
+			background-position: right bottom;
+			background-attachment: fixed;
+			background-size: 25%;
+			background-repeat: no-repeat;
 		}
 
 		.container
@@ -53,9 +58,13 @@
 			margin-top: 10px;
 			font-weight: bold;
 		}
+		.center_nav_products_img
+		{
+
+		}
 		.center_nav
 		{
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			display: inline-block;
 			vertical-align: top;
 			position: static;
@@ -79,6 +88,9 @@
 		{
 			display: inline-block;
 			margin-left: 8px;
+			/*border: 1px solid black;*/
+			width: 120px;
+			vertical-align: top;
 
 		}
 		.picture_box img
@@ -146,7 +158,7 @@
 <?php foreach ($products as $product) { ?>	
 <div class="picture_box">
 					<a href="/product_show/show_products/<?= $product['id']; ?>">					
-						<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg">
+						<img class="img-circle" src="<?= $product['img_url'] ?>">
 						</a><br>
 					<!-- $product['id'] carries products.id to display in the product_show page -->
 
@@ -155,7 +167,7 @@
 
 					<p><?= $product['price'] ?></p>
 </div>
-<?php	} var_dump($products);?>						
+<?php	} ?>						
 				</div>
 			</div>
 
