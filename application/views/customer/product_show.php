@@ -98,9 +98,8 @@
 
 			<h1>COFFREAKS</h2>
 			
-			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
+			<h4><a href="/cart/checkout">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
 
-			
 		</div>
 
 		<p><a href="/products_page/index">Go Back</a></p>
@@ -131,13 +130,7 @@
 					<option value='2'>Qty 2: $<?= $product['price'] * 2; ?></option>
 					<option value='3'>Qty 3: $<?= $product['price'] * 3; ?></option>
 
-<<<<<<< HEAD
 					<!-- passing the id for the indvidual product to be grabbed -->
-=======
-			
-
->>>>>>> d284b41d882f03195d59793c367d032c9fb90504
-
 
 					<input type='hidden' name='id' value='<?= $product['id']; ?>'>
 

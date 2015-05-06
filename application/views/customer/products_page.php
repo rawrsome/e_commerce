@@ -127,7 +127,7 @@
 
 			<h1>COFFREAKS</h2>
 				<!-- echoing out the session that's stored -->
-			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
+			<h4><a href="/cart/checkout">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
 			
 		</div>
 		<div class="left_nav">
@@ -163,19 +163,21 @@
 				</div>
 			</div>
 			<div class="center_nav_products">
-				<div class="center_nav_products_img">			
+				<div class="center_nav_products_img">
+
 <?php foreach ($products as $product) { ?>	
 <div class="picture_box">
-					<a href="/product_show/show_products/<?= $product['id']; ?>">					
+					
+					<a href="/product_show/show_products/<?= $product['id'] ?>">					
 						<img class="img-circle" src="<?= $product['img_url'] ?>">
 						</a>
 
-					<a href='/product_show/show_products/<?= $product['id']; ?>'>
+					<a href='/product_show/show_products/<?= $product['id'] ?>'>
 						<?= $product['name'] ?></a>
-
 					<p><?= $product['price'] ?></p>
 </div>
-<?php	} ?>						
+<?php	} ?>
+						
 				</div>
 			</div>
 

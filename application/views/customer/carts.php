@@ -50,10 +50,24 @@
 		<div class="header">
 			<h1>COFFREAKS</h2>
 		</div>
+
+<?php  
+	if(! $this->session->userdata('cart_total'))
+	{
+		$this->session->set_userdata('cart_total', array());
+	}
+	$total = 0;
+
+	// checking session data for cart items 
+	// var_dump($this->session->userdata('cart_total')); 
+?>
+
+
+
 		<div class="cart_table">
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
-					<tr>
+					<tr class="active">
 						<th>Item</th>
 						<th>Price</th>
 						<th>Quantity</th>
@@ -61,25 +75,24 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Ludlow blazer</td>
-						<td>$299.99</td>
-						<td>1&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
-						<td>$299.99</td>
+
+<?php foreach ($this->session->userdata('cart_total') as $cart_total) { ?>
+
+					<tr class="active">
+						<td><?= $cart_total['name'] ?></td>
+						<td>$<?= $cart_total['price'] ?></td>
+						<td><?= $cart_total['qty'] ?>&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
+						<td>$<?= $cart_total['price'] *= $cart_total['qty'] ?></td>
 					</tr>
-					<tr>
-						<td>Ludlow chino</td>
-						<td>$199.99</td>
-						<td>2&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
-						<td>$399.98</td>
-					</tr>
+<?php } ?>
 				</tbody>
 			</table>
 		</div>
+
 		<div class="total col-xs-12">
 		<div class="col-xs-10"></div>			
 			<div class="col-xs-2">
-				<p>Total: $699.97</p>
+				<p>Total: </p>
 				<a class="btn btn-success btn-xs" href="/products_page/index/">Continue Shopping</a>
 			</div>
 		</div>
