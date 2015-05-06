@@ -53,9 +53,13 @@
 			margin-top: 10px;
 			font-weight: bold;
 		}
+		.center_nav_products_img
+		{
+
+		}
 		.center_nav
 		{
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			display: inline-block;
 			vertical-align: top;
 			position: static;
@@ -79,6 +83,9 @@
 		{
 			display: inline-block;
 			margin-left: 8px;
+			/*border: 1px solid black;*/
+			width: 120px;
+			vertical-align: top;
 
 		}
 		.picture_box img
@@ -143,7 +150,7 @@
 <?php foreach ($products as $product) { ?>	
 <div class="picture_box">
 					<a href="/product_show/show_products/<?= $product['id']; ?>">					
-						<img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg">
+						<img class="img-circle" src="<?= $product['img_url'] ?>">
 						</a><br>
 					<!-- $product['id'] carries products.id to display in the product_show page -->
 
@@ -152,7 +159,7 @@
 
 					<p><?= $product['price'] ?></p>
 </div>
-<?php	} var_dump($products);?>						
+<?php	} ?>						
 				</div>
 			</div>
 

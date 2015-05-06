@@ -100,7 +100,7 @@
 
 		<div class="left_nav">
 			<h4><?= $name; ?></h4>
-			<p class="left_nav_main_img"></p>
+			<p class="left_nav_main_img"><img src=""></p>
 
 			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
 			<p class="left_nav_mini_img"><a href=""><img src="http://www.bostonsearchgroup.com/blog/wp-content/uploads/thumbnail-1024x1024.jpg"></a></p>
