@@ -126,15 +126,16 @@
 				<input type="text" name="search_bar" placeholder="Search">
 				<button><type="submit" name="search"><img src="http://png-2.findicons.com/files/icons/1156/fugue/16/magnifier_medium_left.png"></button>
 				<p id="categories_title">Categories</p>
+
 			</form>
 
-<?php foreach ($categories as $categories) { ?>
 
-				<p>
-					<a href='/product_show/show_products/'><?= $categories['name'] ?>
-						
-					</a>
-				</p>
+
+
+<?php foreach ($count_categories as $count_categories) { ?>
+
+				<p><a href='/product_show/show_products/'><?= $count_categories['name'] ?>(<?= $count_categories['count'] ?>)</a></p>
+
 
 <?php }?>			
 		</div>

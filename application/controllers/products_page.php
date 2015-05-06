@@ -13,13 +13,18 @@ class Products_page extends CI_Controller {
 	{
 		// display products & categories in view/customer/products_page
 		$products = $this->Product->get_all_products_w_imgs();
-		$categories = $this->Product->get_categories();
-		// display number of categories
-		$count_category = $this->Product->get_category_count();
-		// var_dump($count_category);
+
+
+		$count_categories = $this->Product->get_count_category();
+
+		// var_dump($products);
 		// die();
 
-		$this->load->view('customer/products_page', array('products'=>$products, 'categories'=>$categories, 'count_category'=>$count_category));
+		$this->load->view('customer/products_page', array('products'=>$products, 'count_categories'=>$count_categories));
+
+		// var_dump($count_categories);
+		// die();
+
 	}
 
 	public function search()
