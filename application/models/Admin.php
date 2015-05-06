@@ -16,7 +16,7 @@ class Admin extends CI_Model {
 //----------SHOW ALL ORDERS
 	public function get_orders()
 	{
-		$query="SELECT orders.id AS order_id,billings.first_name,billings.last_name,DATE(orders.created_at) AS Date,billings.address,billings.city,billings.state,billings.zipcode,SUM(products.price) AS Total,orders.status FROM orders
+		$query="SELECT orders.id AS order_id,billings.first_name,DATE(orders.created_at) AS Date,billings.address,billings.city,billings.state,billings.zipcode,SUM(products.price) AS Total,orders.status FROM orders
 			LEFT JOIN billings
 			ON orders.billing_id=billings.id
 			left join order_has_product
@@ -25,6 +25,31 @@ class Admin extends CI_Model {
 			on order_has_product.product_id=products.id
 			GROUP BY orders.id DESC";
 		return $this->db->query($query)->result_array();
+	}
+
+	public function search_orders($search){
+		$search='%'.$search.'%';
+		$loopsearch=FALSE;
+		$cols=array('billings.first_name','orders.id','billings.address');
+		$i=0;
+		// while($i<3){
+			$query="SELECT orders.id AS order_id,billings.first_name,DATE(orders.created_at) AS Date,billings.address,billings.city,billings.state,billings.zipcode,SUM(products.price) AS Total,orders.status FROM orders
+			LEFT JOIN billings
+			ON orders.billing_id=billings.id
+			left join order_has_product
+			on orders.id=order_has_product.order_id
+			left join products
+			on order_has_product.product_id=products.id
+			WHERE billings.first_name LIKE ? OR billings.address LIKE ? OR orders.id LIKE ?
+			GROUP BY orders.id DESC";
+		// 	if(!empty($this->db->query($query,array($cols[$i],$search))->result_array())){
+		// 		return $this->db->query($query,array($cols[$i],$search))->result_array();
+		// 	}
+		// 	else{
+		// 		$i++;
+		// 	}
+		// }
+		return $this->db->query($query,array($search,$search,$search))->result_array();
 	}
 
 //----------SHOW ORDERS BY STATUS (SHIPPED, ETC...)
