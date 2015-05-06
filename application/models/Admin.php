@@ -95,7 +95,7 @@ class Admin extends CI_Model {
 	            WHERE orders.id=?
 				GROUP BY products.id";
 
-		return $this->db->query($query,array($id));
+		return $this->db->query($query,array($id))->row_array();
 	}
 
 

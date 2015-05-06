@@ -45,15 +45,29 @@ class Admins extends CI_Controller {
 			}
 
 			// $this->load->view('welcome', array('results'=>$results));
-		} 
+		}
 	}
 //-----------------------------ADMIN LOGIN
 
 	public function search_orders(){
+		if($this->input->post('status')!=='show_all'){
+			$status=$this->input->post('status');
+			$result=$this->Admin->get_orders_by_status($status);
+			$this->load->view('admin/admin_orders', array('orders'=>$result,'status'=>$status));
+		}
+		else{
 		$search=$this->input->post('search');
 		$result=$this->Admin->search_orders($search);
 		$this->load->view('admin/admin_orders', array('orders'=>$result));
 		// var_dump($result);
+		}
+
+
+	}
+
+	public function show_order($id){
+		$result=$this->Admin->show_order($id);
+		$this->load->view('admin/admin_orders_show',array('result'=>$result));
 	}
 
 
