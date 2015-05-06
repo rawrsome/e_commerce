@@ -5,6 +5,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
+
 		body
 		{
 			width: 100%;
@@ -133,19 +134,13 @@
 		</div>
 		<div class="bottom_nav">
 			<h3>Similar Items</h3>
-<!-- 			<table>
-				<tbody>
-					<tr> -->
 
 				<?php foreach ($similar as $img): ?>
 					
 					<p class="bottom_nav_similar"><a href=""></a><img src=<?=$img['img_url']?>></p>
 
 				<?php endforeach ?>
-						
-<!-- 					</tr>
-				</tbody>
-			</table> -->
+
 		</div>
 	</div>
 </body>
