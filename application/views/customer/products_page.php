@@ -146,8 +146,7 @@
 
 				<p><a href='/product_show/show_products/'><?= $count_categories['name'] ?>(<?= $count_categories['count'] ?>)</a></p>
 
-
-<?php }?>			
+<?php }?>
 		</div>
 		<div class="center_nav">
 			<div class="center_title">
@@ -170,7 +169,6 @@
 					<a href="/product_show/show_products/<?= $product['id']; ?>">					
 						<img class="img-circle" src="<?= $product['img_url'] ?>">
 						</a>
-					<!-- $product['id'] carries products.id to display in the product_show page -->
 
 					<a href='/product_show/show_products/<?= $product['id']; ?>'>
 						<?= $product['name'] ?></a>
