@@ -16,7 +16,7 @@ else
 	$db['default']['username'] = 'root';
 	$db['default']['password'] = 'root';
 	$db['default']['database'] = 'ecom';
-
+}
 
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
