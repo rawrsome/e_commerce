@@ -23,6 +23,7 @@ class Products_page extends CI_Controller {
 
 		// var_dump($count_categories);
 		// die();
+		
 
 	}
 
@@ -40,7 +41,6 @@ class Products_page extends CI_Controller {
 
 	public function show_cart()
 	{
-		$checkout_result = $this->session->userdata();
 
 		$this->load->view('/customer/carts');
 	}

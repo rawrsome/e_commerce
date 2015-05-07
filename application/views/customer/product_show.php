@@ -98,11 +98,9 @@
 
 			<h1>COFFREAKS</h2>
 			
-<<<<<<< HEAD
-			<h4><a href="/cart/checkout">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
-=======
+
 			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://icons.iconseeker.com/png/fullsize/aspnet/shopping-cart-add.png"></a></h4>
->>>>>>> fef3b0b815b1fab0f822c6ca49b988d76252cb2b
+
 
 		</div>
 

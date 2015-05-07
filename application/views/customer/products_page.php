@@ -4,6 +4,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -120,6 +121,7 @@
 		}
 
 	</style>
+
 </head>
 <body>
 	<div class="container">
@@ -154,7 +156,6 @@
 			<div class="center_title">
 				<h1>All Coffee</h1>
 				<div class="center_search">
-					<p><a href="">first</a> | <a href="">prev</a> | 1 | <a href="">next</a></p>
 					<p>Sorted by 
 						<select>
 							<option>Most Popular</option>
@@ -183,11 +184,16 @@
 				</div>
 			</div>
 
-			<div class="product_page">
-				<p><a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">6</a> -></p>
-
-			</div>
 		</div>
 	</div>
+		<script>
+	 
+	$(".img-circle").mouseover(function() {
+		$( this ).css("background-color","#333")
+	});
+	$(".img-circle").mouseout(function(){
+		$( this ).css("background-color","#fcfcfc")
+	});
+	</script>
 </body>
 </html>
