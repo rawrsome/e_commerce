@@ -53,7 +53,7 @@ class Cart extends CI_Controller {
 		redirect('products_page');
 		// $this->load->view('/Product_show/show_products');
 	}
-	
+
 	public function checkout()
 	{	
 

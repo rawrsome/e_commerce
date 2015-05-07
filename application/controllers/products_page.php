@@ -18,12 +18,12 @@ class Products_page extends CI_Controller {
 
 		// var_dump($products);
 		// die();
+		$cat_name="All Products";
 
-		$this->load->view('customer/products_page', array('products'=>$products, 'count_categories'=>$count_categories));
+		$this->load->view('customer/products_page', array('products'=>$products, 'count_categories'=>$count_categories,'cat_name'=>$cat_name));
 
 		// var_dump($count_categories);
 		// die();
-		
 
 	}
 
@@ -34,9 +34,25 @@ class Products_page extends CI_Controller {
 
 		//pass search model and store array result in result
 		$result = $this->Product->get_search($search);
-
+			// var_du
 
 		$this->load->view('customer/product_show', array('name'=>$search['name'], 'description'=>$search['description']));
+	}
+
+	public function view_category($id){
+		if($id==="all"){
+			$this->index();
+		}
+		else{
+			$products = $this->Product->get_products_by_category($id);
+			$count_categories = $this->Product->get_count_category();
+			$cat_name=$count_categories[$id-1]['name'];
+			// var_dump($count_categories);
+			// die();
+
+			$this->load->view('customer/products_page', array('products'=>$products, 'count_categories'=>$count_categories,'cat_name'=>$cat_name));
+		}
+
 	}
 
 	public function show_cart()
