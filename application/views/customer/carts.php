@@ -76,18 +76,25 @@
 				</thead>
 				<tbody>
 
-<?php foreach ($this->session->userdata('cart_total') as $cart_total) { ?>
-				
+<?php $item=0;
+	foreach ($this->session->userdata('cart_total') as $cart_total) { ?>
 					<tr class="active">
 						<td><?= $cart_total['name'] ?></td>
 						<td>$<?= $cart_total['price'] ?></td>
-						<td><?= $cart_total['qty'] ?>&nbsp;&nbsp;&nbsp;<a href="" class="btn btn-info btn-xs">update</a><a href="">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a></td>
+						<td><?= $cart_total['qty'] ?>&nbsp;&nbsp;&nbsp;
+							<a href="/cart/update/<?= $cart_total['id'] ?>" class="btn btn-info btn-xs">update</a>
+							<a href="/cart/destroy/<?= $item; ?>">&nbsp;&nbsp;&nbsp;<img src="http://q-serv.biz/design/admin2/images/trash-icon-16x16.gif"></a>
+						</td>
 						<td>$<?php echo $item_total = $cart_total['price'] * $cart_total['qty'];
 						$total = $total + $item_total;
+						$item++;
 						 ?></td>
 					</tr>
-<?php } ?>
+<?php  } ?>
  
+
+ <?php 
+ // var_dump($this->session->userdata('cart_total'));  ?>
 				</tbody>
 			</table>
 		</div>
