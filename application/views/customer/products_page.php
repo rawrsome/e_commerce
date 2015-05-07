@@ -20,25 +20,35 @@
 			background-size: 25%;
 			background-repeat: no-repeat;
 		}
-
 		.container
 		{
 			width: 800px;
 			margin: 0px auto;
 		}
-		.hearder 
+		.header 
 		{
 			background: url(/assets/beans.png);
 			background-repeat: no-repeat;
 			color: white;
 			height: 200px;
 		}
-		.hearder h4
+		.header img
+		{
+			-moz-transform: scaleX(-1);
+	        -o-transform: scaleX(-1);
+	        -webkit-transform: scaleX(-1);
+	        transform: scaleX(-1);
+	        filter: FlipH;
+	        -ms-filter: "FlipH";
+			height: 28px;
+			width: 28px;
+		}
+		.header h4
 		{
 			text-align: right;
 			padding-top: 30px;
 		}
-		.hearder h1
+		.header h1
 		{
 			padding-top: 50px;
 			padding-left: 50px;
@@ -123,13 +133,12 @@
 </head>
 <body>
 	<div class="container">
-		<div class="hearder">
+		<div class="header">
 
-			<h1>COFFREAKS</h2>
+			<h1>COFFREAKS</h1>
 				<!-- echoing out the session that's stored -->
 
-			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://icons.iconseeker.com/png/fullsize/aspnet/shopping-cart-add.png"></a></h4>
-
+			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://www.creativecodestudios.com/wp-content/uploads/2015/03/trolly.png"></a></h4>
 			
 		</div>
 		<div class="left_nav">

@@ -30,6 +30,17 @@
 			color: white;
 			height: 200px;
 		}
+		.header img
+		{
+			-moz-transform: scaleX(-1);
+	        -o-transform: scaleX(-1);
+	        -webkit-transform: scaleX(-1);
+	        transform: scaleX(-1);
+	        filter: FlipH;
+	        -ms-filter: "FlipH";
+			height: 28px;
+			width: 28px;
+		}
 		.header h4
 		{
 			text-align: right;
@@ -96,13 +107,9 @@
 	<div class="container">
 		<div class="header">
 
-			<h1>COFFREAKS</h2>
+			<h1>COFFREAKS</h1>
 			
-<<<<<<< HEAD
-			<h4><a href="/cart/checkout">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)</a></h4>
-=======
-			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://icons.iconseeker.com/png/fullsize/aspnet/shopping-cart-add.png"></a></h4>
->>>>>>> fef3b0b815b1fab0f822c6ca49b988d76252cb2b
+			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://www.creativecodestudios.com/wp-content/uploads/2015/03/trolly.png"></a></h4>
 
 		</div>
 
