@@ -79,6 +79,14 @@ class Admins extends CI_Controller {
 		$this->load->view('admin/admin_products',array('results'=>$results));
 	}
 
+	public function search_products_admin(){
+			$search=$this->input->post('search');
+			$result=$this->Admin->search_products_admin($search);
+			// var_dump($result);
+			// die();
+			$this->load->view('admin/admin_products', array('results'=>$result));
+	}
+
 
 
 

@@ -22,6 +22,15 @@ class Product extends CI_Model {
 		return $this->db->query($query,array($id))->result_array();
 	}
 
+	public function get_products_by_category($id){
+		$query = "SELECT products.*,images.img_url,images.img_status,images.id AS img_id FROM products
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE images.img_status='main' AND products.category_id=?";
+
+		return $this->db->query($query,array($id))->result_array();
+	}
+
 //----------GET RANDOM PRODUCTS IN SAME CATEGORY
 	public function get_similar($category){
 		$query="SELECT * FROM products
