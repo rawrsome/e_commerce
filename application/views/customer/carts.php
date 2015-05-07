@@ -77,7 +77,7 @@
 				<tbody>
 
 <?php foreach ($this->session->userdata('cart_total') as $cart_total) { ?>
-
+				
 					<tr class="active">
 						<td><?= $cart_total['name'] ?></td>
 						<td>$<?= $cart_total['price'] ?></td>
