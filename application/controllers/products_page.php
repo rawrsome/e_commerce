@@ -27,16 +27,38 @@ class Products_page extends CI_Controller {
 
 	}
 
-	public function search()
+	public function search_products()
 	{
-		//get post thing called 'search_bar' from products_page form
-		$search=$this->input->post('search_bar');
+		if($this->input->post('sort')=='pop'){
+			$products=$this->Product->get_products_by_pop();
+		}
+		else if($this->input->post('sort')=='high'){
+			$products=$this->Product->get_products_by_high();
+		}
+		else if($this->input->post('sort')=='low'){
+			$products=$this->Product->get_products_by_low();
+		}
+		else{
 
-		//pass search model and store array result in result
-		$result = $this->Product->get_search($search);
-			// var_du
+			//get post thing called 'search_bar' from products_page form
+			$search=$this->input->post('search_bar');
 
-		$this->load->view('customer/product_show', array('name'=>$search['name'], 'description'=>$search['description']));
+			//pass search model and store array result in result
+			$products = $this->Product->get_search($search);
+			// var_dump($products);
+			}	// var_du
+
+
+			// $products = $this->Product->get_all_products_w_imgs();
+
+			$count_categories = $this->Product->get_count_category();
+
+			// var_dump($products);
+			// die();
+			$cat_name="All Products";
+
+			$this->load->view('customer/products_page', array('products'=>$products, 'count_categories'=>$count_categories,'cat_name'=>$cat_name));
+		
 	}
 
 	public function view_category($id){
@@ -54,6 +76,8 @@ class Products_page extends CI_Controller {
 		}
 
 	}
+
+	
 
 	public function show_cart()
 	{

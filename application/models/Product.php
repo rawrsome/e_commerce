@@ -31,6 +31,40 @@ class Product extends CI_Model {
 		return $this->db->query($query,array($id))->result_array();
 	}
 
+	public function get_products_by_pop(){
+		$query="SELECT images.img_url,products.*,COUNT(order_has_product.product_id) AS quantity_sold from images
+				LEFT JOIN products
+				ON products.id=images.product_id
+				LEFT JOIN order_has_product
+				ON products.id=order_has_product.product_id
+				WHERE images.img_status='main'
+				GROUP BY order_has_product.product_id
+                ORDER BY quantity_sold DESC";
+        return $this->db->query($query)->result_array();
+	}
+	public function get_products_by_high()
+	{
+		$query = "SELECT products.*,images.img_url,images.img_status,images.id AS img_id FROM products
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE images.img_status='main'
+				ORDER BY products.price DESC";
+
+		return $this->db->query($query)->result_array();
+	}
+
+	public function get_products_by_low()
+	{
+		$query = "SELECT products.*,images.img_url,images.img_status,images.id AS img_id FROM products
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE images.img_status='main'
+				ORDER BY products.price";
+
+		return $this->db->query($query)->result_array();
+	}
+
+
 //----------GET RANDOM PRODUCTS IN SAME CATEGORY
 	public function get_similar($category){
 		$query="SELECT * FROM products
@@ -54,8 +88,6 @@ class Product extends CI_Model {
 	}
 
 	
-
-
 
 	public function get_category_count()
 	{
@@ -96,7 +128,22 @@ class Product extends CI_Model {
 	{
 
 		$name='%'.$name.'%';
-		$query = "SELECT * FROM products WHERE name LIKE ?";
+		$query = "SELECT products.*,images.img_url,images.img_status,images.id AS img_id FROM products
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE images.img_status='main' AND products.name LIKE ?";
+
+		//pass parameter 'name' to query function
+		return $this->db->query($query,array($name))->result_array();
+	}
+	public function get_sorted_search($name)
+	{
+
+		$name='%'.$name.'%';
+		$query = "SELECT products.*,images.img_url,images.img_status,images.id AS img_id FROM products
+				LEFT JOIN images
+				ON products.id=images.product_id
+				WHERE images.img_status='main' AND products.name LIKE ?";
 
 		//pass parameter 'name' to query function
 		return $this->db->query($query,array($name))->result_array();

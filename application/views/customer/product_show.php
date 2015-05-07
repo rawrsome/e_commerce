@@ -4,6 +4,17 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.left_nav_mini_img').click(function(){
+				var temp=$(this).attr('src');
+				console.log(temp);
+				$(this).attr('src',$('.left_nav_main_img').attr('src'));
+				$('.left_nav_main_img').attr('src',temp);
+			})
+		})
+
+	</script>
 	<style type="text/css">
 
 		body
@@ -74,7 +85,7 @@
 			display: inline-block;
 
 		}
-		.left_nav_mini_img img
+		.left_nav_mini_img
 		{
 			/*border: 1px solid black;*/
 			display: inline-block;
@@ -110,7 +121,7 @@
 			<h1>COFFREAKS</h1>
 			
 
-			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://icons.iconseeker.com/png/fullsize/aspnet/shopping-cart-add.png"></a></h4>
+			<h4><a href="/admins">login</a><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://icons.iconseeker.com/png/fullsize/aspnet/shopping-cart-add.png"></a></h4>
 
 		</div>
 
@@ -124,7 +135,7 @@
 
 			<?php foreach($product_imgs as $img){?>
 
-				<p class="left_nav_mini_img"><a href=""><img src=<?= $img['img_url'] ?>></a></p>
+				<p ><img class="left_nav_mini_img" src=<?= $img['img_url'] ?>></p>
 			
 			<?php } ?>
 		</div>
@@ -166,4 +177,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

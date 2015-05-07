@@ -49,6 +49,7 @@
 	<div class="container">
 		<div class="header">
 			<h1>COFFREAKS</h1>
+			<a href="/admins">login</a>
 		</div>
 
 <?php  
