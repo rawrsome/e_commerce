@@ -7,10 +7,8 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#stat').change(function(){
-				console.log($('#stat').val());
 				var status=$('#stat').val();
 				$('#status_hidden').val(status);
-				console.log($('#status_hidden').val());
 				$('form').submit();
 			})
 		})
@@ -46,6 +44,7 @@
 	<div class="container">
 		<div class="header">
 			<h1>Dashboard</h1>&nbsp;&nbsp;&nbsp;
+			<a href="/Products_page">view products</a>
 			<h2><a href="/admins/show_orders">Orders</a></h2>&nbsp;&nbsp;&nbsp;
 			<h2><a href="/admins/products_show">Products</a></h2>&nbsp;&nbsp;&nbsp;
 			<p class="pull-right"><a href="">log off</a></p>

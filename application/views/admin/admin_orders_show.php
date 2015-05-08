@@ -62,8 +62,10 @@
 <body>
 	<?php var_dump($result); ?>
 	<div class="container">
+
 		<div class="header">
 			<h1>Dashboard</h1>&nbsp;&nbsp;&nbsp;
+			<a href="/Products_page">view products</a>
 			<h2><a href="">Orders</a></h2>&nbsp;&nbsp;&nbsp;
 			<h2><a href="">Products</a></h2>&nbsp;&nbsp;&nbsp;
 			<p class="pull-right"><a href="">log off</a></p>

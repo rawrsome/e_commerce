@@ -5,6 +5,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#sort').change(function(){
+				var sort = $(this).val();
+				$('#sort_hidden').val(sort);
+				$('form').submit();
+			})
+		})
+	</script>
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -140,14 +149,15 @@
 			<h1>COFFREAKS</h1>
 
 				<!-- echoing out the session that's stored -->
-
-			<h4><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://www.creativecodestudios.com/wp-content/uploads/2015/03/trolly.png"></a></h4>
+			
+			<h4><a href="/admins">login</a><a href="/products_page/show_cart">Shopping Cart (<?= $this->session->userdata('cart_counts') ?>)<img src="http://www.creativecodestudios.com/wp-content/uploads/2015/03/trolly.png"></a></h4>
 			
 		</div>
 		<div class="left_nav">
 
-			<form action="/products_page/search" method="POST">
+			<form action="/products_page/search_products" method="POST">
 				<input type="text" name="search_bar" placeholder="Search">
+				<input id="sort_hidden" type="hidden" name="sort" value="all">
 				<button><type="submit" name="search"><img src="http://png-2.findicons.com/files/icons/1156/fugue/16/magnifier_medium_left.png"></button>
 				<p id="categories_title">Categories</p>
 
@@ -167,18 +177,21 @@
 				<h1><?= $cat_name ?></h1>
 				<div class="center_search col-sm-8">
 					<p>Sorted by 
-						<select>
-							<option>Most Popular</option>
-							<option>Price: High - Low</option>
-							<option>Price: Low - High</option>
-						</select>
+						
+							<select id="sort">
+								<option value="all">All</option>
+								<option value="pop">Most Popular</option>
+								<option value="high">Price: High - Low</option>
+								<option value="low">Price: Low - High</option>
+							</select>
+						
 					</p>
 				</div>
 			</div>
 			<div class="center_nav_products">
 				<div class="center_nav_products_img">
 
-<?php foreach ($products as $product) { ?>	
+<?php foreach ($products as $product) { ?>
 <div class="picture_box">
 					
 					<a href="/product_show/show_products/<?= $product['id'] ?>">					
