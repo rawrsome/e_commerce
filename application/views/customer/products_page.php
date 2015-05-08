@@ -30,7 +30,6 @@
 		{
 			background: url(/assets/beans.png);
 			background-repeat: no-repeat;
-			color: white;
 			height: 200px;
 		}
 		.header img
@@ -55,6 +54,10 @@
 			padding-left: 50px;
 			margin: 0;
 			font-size: 60px;
+			color: #FFF5EE;
+			text-shadow: 2px 2px #A0522D;
+			font-family: "Lucida Sans Unicode";
+			font-weight: bold;
 		}
 		.left_nav 
 		{
@@ -75,10 +78,7 @@
 			margin-top: 10px;
 			font-weight: bold;
 		}
-		.center_nav_products_img
-		{
 
-		}
 		.center_nav
 		{
 			/*border: 1px solid black;*/
@@ -99,7 +99,7 @@
 		}
 		.center_search p
 		{
-			margin: 0px;
+			/*margin: 0px;*/
 		}
 		.picture_box
 		{
@@ -165,7 +165,7 @@
 		<div class="center_nav">
 			<div class="center_title">
 				<h1><?= $cat_name ?></h1>
-				<div class="center_search">
+				<div class="center_search col-sm-8">
 					<p>Sorted by 
 						<select>
 							<option>Most Popular</option>
